@@ -1,0 +1,24 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fiddler.ai/api/rest-api/rest-api
+docs: https://docs.fiddler.ai/developers/python-client-guides/installation-and-setup
+summary:
+  types: [http]
+  http_schemes: [bearer]
+  api_key_in: [header]
+  oauth2_flows: []
+notes: >-
+  All Fiddler REST API and MCP endpoints require Bearer token authentication.
+  Tokens are personal access tokens / API keys minted per user from the Fiddler
+  deployment (Settings > Credentials), scoped by the user's RBAC role. The Python
+  client authenticates with the deployment URL plus the same token.
+schemes:
+  - name: bearerAuth
+    type: http
+    scheme: bearer
+    location: 'Authorization: Bearer <token>'
+    token_type: personal access token / API key (user-access-key)
+    sources: [https://docs.fiddler.ai/api/rest-api/rest-api]
+access_control:
+  model: RBAC
+  note: Authorization is role-based; the user-access-keys / users endpoints manage keys and role assignments.
