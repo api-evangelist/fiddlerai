@@ -1,0 +1,23 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fiddler.ai/changelog/
+versioning:
+  api:
+    scheme: uri-path
+    current: v3
+  python_client:
+    scheme: semver
+    current: 3.13.0
+  compatibility_matrix: https://docs.fiddler.ai/changelog/compatibility-matrix
+deprecation:
+  policy: >-
+    Deprecations are announced in the per-SDK changelogs (Python client, Evals,
+    LangChain, LangGraph, OTel, Strands, Google ADK) with deprecation notices; the
+    platform/client compatibility matrix guides supported version pairings.
+  docs: https://docs.fiddler.ai/changelog/python-sdk
+  examples:
+    - 'Model.publish() deprecated in 3.12.0 in favor of publish_stream() / publish_batch()'
+status_page: null
+sla:
+  note: SOC 2 Type II covers availability; contractual uptime SLAs are handled per enterprise agreement (not a public status page).
+deprecated_operations: []

@@ -1,0 +1,62 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fiddler.ai/api/rest-api/rest-api
+notes: >-
+  Entity-relationship graph derived from the Fiddler REST API resource surface and
+  product concepts (no downloadable OpenAPI was available; relationships reflect the
+  documented object model rather than a machine-read $ref graph).
+entities:
+  - name: project
+    summary: Top-level container that organizes models/applications.
+    relationships:
+      - {type: has_many, target: model, via: project_id}
+      - {type: has_many, target: application, via: project_id}
+  - name: model
+    summary: An onboarded ML model or LLM application with a schema (ModelSpec/ModelSchema).
+    relationships:
+      - {type: belongs_to, target: project, via: project_id}
+      - {type: has_many, target: event, via: model_id}
+      - {type: has_many, target: alert_rule, via: model_id}
+      - {type: has_many, target: baseline, via: model_id}
+      - {type: has_many, target: custom_metric, via: model_id}
+      - {type: has_many, target: segment, via: model_id}
+  - name: application
+    summary: A GenAI/agent application producing traces, sessions, and spans.
+    relationships:
+      - {type: belongs_to, target: project, via: project_id}
+      - {type: has_many, target: trace, via: application_id}
+      - {type: has_many, target: genai_alert_rule, via: application_id}
+      - {type: has_many, target: evaluator, via: application_id}
+  - name: event
+    summary: Published production inference record for a model.
+    relationships:
+      - {type: belongs_to, target: model, via: model_id}
+  - name: trace
+    summary: A GenAI/agent session trace tree composed of spans.
+    relationships:
+      - {type: belongs_to, target: application, via: application_id}
+      - {type: has_many, target: span, via: trace_id}
+      - {type: has_many, target: session, via: trace_id}
+  - name: span
+    relationships:
+      - {type: belongs_to, target: trace, via: trace_id}
+  - name: session
+    relationships:
+      - {type: belongs_to, target: trace, via: trace_id}
+  - name: alert_rule
+    relationships:
+      - {type: belongs_to, target: model, via: model_id}
+  - name: baseline
+    relationships:
+      - {type: belongs_to, target: model, via: model_id}
+  - name: custom_metric
+    relationships:
+      - {type: belongs_to, target: model, via: model_id}
+  - name: evaluator
+    summary: Built-in or custom (LLM-as-a-Judge) scorer applied to application spans/traces.
+    relationships:
+      - {type: belongs_to, target: application, via: application_id}
+  - name: user_access_key
+    summary: Personal access token / API key used for Bearer auth.
+    relationships:
+      - {type: belongs_to, target: user, via: user_id}

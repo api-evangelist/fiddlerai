@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fiddler.ai/api/rest-api/rest-api
+notes: Cross-cutting request/response semantics for the Fiddler REST API (v3), captured from the REST API reference.
+authentication:
+  style: bearer-token
+  header: 'Authorization: Bearer <token>'
+  see: authentication/fiddlerai-authentication.yml
+base_path:
+  versioning: uri-path
+  current: v3
+  pattern: https://<your-fiddler-url>/v3/<resource>
+envelope:
+  request: JSON body, typically under a top-level `data` object
+  response:
+    fields: [api_version, kind, data]
+    kind_values: [NORMAL, PAGINATED, ERROR]
+pagination:
+  style: offset
+  applies_when: response kind == PAGINATED
+  response_fields: [page_size, item_count, total, page_count, page_index, offset, items]
+error_envelope:
+  kind: ERROR
+  fields: [code, message, errors]
+  error_item_fields: [reason, help]
+  see: errors/fiddlerai-problem-types.yml
+rate_limiting:
+  signaled: true
+  per_endpoint_range: 10-30 req/s (REST); 120 req/min per API key (MCP)
+  status_on_exceed: 429
+  headers: [Retry-After, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset]
+idempotency:
+  documented: false
+  note: No idempotency-key contract is documented in the public REST API reference.
+naming:
+  convention: lowercase, a-z 0-9 and underscores; must start with a lowercase letter
+  see: https://docs.fiddler.ai/developers/python-client-guides/naming-convention-guidelines

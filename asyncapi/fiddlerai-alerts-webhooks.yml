@@ -1,0 +1,17 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fiddler.ai/product-guide/monitoring-platform/alerts-platform
+spec_type: Webhooks
+notes: >-
+  Fiddler has no published AsyncAPI document. Its outbound event surface is alert
+  notifications fired by Alert Rules when a monitored metric crosses a threshold.
+  Notifications are delivered to configured channels; Microsoft Teams and generic
+  webhook delivery are supported (native Teams webhook added in Python client 3.9.0).
+event_surface: alert-notifications
+trigger: Alert Rule threshold breach (drift, data integrity, performance, custom metrics, GenAI evaluators/guardrails)
+channels:
+  - type: email
+  - type: pagerduty
+  - type: webhook
+    detail: Microsoft Teams incoming webhook / generic webhook target configured on the Alert Rule.
+managed_by: Alert Rules (created/updated via /alert-rules, /genai-alert-rules, or AlertRule SDK methods)

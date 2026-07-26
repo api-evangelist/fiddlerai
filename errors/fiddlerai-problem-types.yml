@@ -1,0 +1,40 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fiddler.ai/api/rest-api/rest-api
+format: custom-envelope
+notes: >-
+  Fiddler does not use RFC 9457 application/problem+json. Errors return the standard
+  response envelope with kind=ERROR and a nested error object: { code, message,
+  errors: [ { reason, help } ] }, alongside a standard HTTP status code.
+envelope:
+  kind: ERROR
+  fields: [code, message, errors]
+  error_item_fields: [reason, help]
+problems:
+  - status: 400
+    title: Bad Request
+    cause: Malformed request body or invalid parameters.
+  - status: 401
+    title: Unauthorized
+    cause: Missing or invalid Bearer token.
+  - status: 403
+    title: Forbidden
+    cause: Authenticated user lacks the RBAC permission for the operation.
+  - status: 404
+    title: Not Found
+    cause: Referenced resource (project, model, application, etc.) does not exist.
+  - status: 409
+    title: Conflict
+    cause: Resource already exists or a uniqueness/naming constraint was violated.
+  - status: 413
+    title: Payload Too Large
+    cause: Guardrails / input payload exceeds the endpoint's fixed maximum length.
+  - status: 422
+    title: Unprocessable Entity
+    cause: Semantically invalid field values (schema/type validation failure).
+  - status: 429
+    title: Too Many Requests
+    cause: Per-endpoint rate limit exceeded; retry after Retry-After / X-RateLimit-Reset.
+  - status: 500
+    title: Internal Server Error
+    cause: Unexpected server-side failure.

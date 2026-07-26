@@ -1,0 +1,15 @@
+generated: '2026-07-19'
+method: searched
+source: https://pypi.org/project/fiddler-client/
+packages:
+  - language: python
+    registry: pypi
+    name: fiddler-client
+    url: https://pypi.org/project/fiddler-client/
+    install: pip install fiddler-client
+    import: import fiddler as fdl
+    latest_version: 3.13.0
+    license: Apache-2.0
+    python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
+    official: true
+    description: Official Python client for the Fiddler AI Observability platform (model/GenAI onboarding, publishing, monitoring, alerts, guardrails).

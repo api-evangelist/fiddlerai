@@ -1,0 +1,45 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.fiddler.ai/changelog/python-sdk
+scheme: semver
+component: python-client (fiddler-client)
+current_version: 3.13.0
+docs:
+  python_sdk: https://docs.fiddler.ai/changelog/python-sdk
+  product_releases: https://docs.fiddler.ai/changelog/product-releases
+entries:
+  - version: 3.13.0
+    date: '2026-07-07'
+    breaking: false
+    highlights:
+      - Added Model.delete_events() to remove published production events by time-range or ID with accidental-deletion safety guards.
+  - version: 3.12.0
+    breaking: true
+    highlights:
+      - Migrated to Pydantic v2 (now the minimum requirement).
+      - Deprecated Model.publish() in favor of explicit publish_stream() and publish_batch().
+      - Added Python 3.13 and 3.14 support.
+  - version: 3.11.0
+    breaking: false
+    highlights:
+      - Added Model.add_column() to extend model schemas post-deployment (inputs/outputs/targets/metadata).
+  - version: 3.10.0
+    breaking: false
+    highlights:
+      - Added create_columns_from_df helper to generate ModelSchema from pandas DataFrames.
+  - version: 3.9.2
+    breaking: false
+    highlights:
+      - Enabled auto_threshold_params when creating/updating alert rules.
+  - version: 3.9.1
+    breaking: false
+    highlights:
+      - 'Security: raised minimum pyarrow to 15.0.0 (CVE-2025-30065).'
+  - version: 3.9.0
+    breaking: false
+    highlights:
+      - Added native Microsoft Teams Webhook integration support.
+  - version: 3.8.0
+    breaking: false
+    highlights:
+      - Added AlertRule.update() for modifying thresholds and evaluation delays; automatic threshold determination.

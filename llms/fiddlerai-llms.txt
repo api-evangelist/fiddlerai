@@ -1,0 +1,562 @@
+# Fiddler Documentation
+
+> Unified observability for trustworthy AI across traditional ML, LLM applications, autonomous agents, and self-hosted deployments.
+
+## Docs
+
+- [Fiddler Google ADK SDK](https://docs.fiddler.ai/changelog/adk-sdk.md): Fiddler's Google ADK SDK release history. Contains ADK SDK release highlights, deprecation notices, and more.
+- [Compatibility Matrix](https://docs.fiddler.ai/changelog/compatibility-matrix.md): Compatibility guidance between the Fiddler platform and Python client. Find the recommended Python client version to use with your Fiddler platform ve…
+- [Fiddler Evals SDK](https://docs.fiddler.ai/changelog/evals-sdk.md): Fiddler's Evals SDK release history. Contains Evals SDK release highlights, SDK deprecation notices, and more.
+- [Changelog](https://docs.fiddler.ai/changelog/index.md): Release notes for the Fiddler AI Observability Platform and supported SDKs.
+- [Fiddler LangChain SDK](https://docs.fiddler.ai/changelog/langchain-sdk.md): Fiddler's LangChain SDK release history. Contains LangChain SDK release highlights, SDK deprecation notices, and more.
+- [Fiddler LangGraph SDK](https://docs.fiddler.ai/changelog/langgraph-sdk.md): Fiddler's LangGraph SDK release history. Contains LangGraph SDK release highlights, SDK deprecation notices, and more.
+- [Fiddler OTel SDK](https://docs.fiddler.ai/changelog/otel-sdk.md): Fiddler's OTel SDK release history. Contains OTel SDK release highlights, SDK deprecation notices, and more.
+- [Product Releases](https://docs.fiddler.ai/changelog/product-releases.md): Discover the latest updates to Fiddler's AI observability platform - new features for ML, LLM, GenAI, and agentic observability.
+- [Python Client SDK](https://docs.fiddler.ai/changelog/python-sdk.md): Fiddler's Python client history reference. Contains Python client release highlights, client deprecation notices, and more.
+- [Fiddler Strands Agent SDK](https://docs.fiddler.ai/changelog/strands-sdk.md): Fiddler's Strands Agent SDK release history. Contains Strands Agent SDK release highlights, SDK deprecation notices, and more.
+- [RAG Health Diagnostics](https://docs.fiddler.ai/concepts/rag-health-diagnostics.md): Understand how RAG Health Metrics diagnose Retrieval-Augmented Generation pipeline failures using Answer Relevance, Context Relevance, and RAG Faithfu…
+- [Semantic Mappings](https://docs.fiddler.ai/concepts/semantic-mappings.md): How Fiddler maps raw OTel attribute keys to canonical semantic concepts for cross-framework analytics, alerts, and dashboards
+- [Model Onboarding](https://docs.fiddler.ai/developers/client-library-reference/model-onboarding.md)
+- [Publishing Production Data](https://docs.fiddler.ai/developers/client-library-reference/publishing-production-data.md): Navigate our client guide to publishing production data. Learn how to provide event data to Fiddler, update it, and retrieve it efficiently.
+- [Monitoring Agentic Content Generation](https://docs.fiddler.ai/developers/cookbooks/agentic-content-generation.md): Monitor agentic content generation for quality, safety, and brand compliance using built-in evaluators and custom LLM-as-a-Judge scoring.
+- [Agentic Document Extraction](https://docs.fiddler.ai/developers/cookbooks/agentic-document-extraction.md): Build observable, measurable document extraction pipelines using Fiddler's agentic tracing, custom evaluators, and experiments.
+- [AI Security](https://docs.fiddler.ai/developers/cookbooks/ai-security.md): Monitor for AI security concerns using built-in evaluators and custom LLM-as-a-Judge scoring.
+- [Tracking Bias and Accuracy Across Cohorts](https://docs.fiddler.ai/developers/cookbooks/bias-and-accuracy.md): Track GenAI accuracy and bias across protected cohorts using Fiddler out-of-the-box evaluators, custom LLM-as-a-Judge scoring, and segment-based fairn…
+- [Overview](https://docs.fiddler.ai/developers/cookbooks/cookbooks.md): Use-case oriented guides for solving real-world AI evaluation and monitoring problems with Fiddler.
+- [Building Custom Judge Evaluators](https://docs.fiddler.ai/developers/cookbooks/custom-judge-evaluators.md): Build domain-specific LLM-as-a-Judge evaluators using CustomJudge with prompt templates, structured output fields, and iterative prompt improvement.
+- [Detecting Hallucinations in RAG](https://docs.fiddler.ai/developers/cookbooks/hallucination-detection-pipeline.md): Build a complete hallucination detection pipeline combining Evals SDK evaluation with LLM Observability enrichments for continuous RAG monitoring.
+- [RAG Evaluation Fundamentals](https://docs.fiddler.ai/developers/cookbooks/rag-evaluation-fundamentals.md): Evaluate RAG application quality using Fiddler's built-in evaluators with direct scoring for rapid iteration on retrieval and generation quality.
+- [Running RAG Experiments at Scale](https://docs.fiddler.ai/developers/cookbooks/rag-experiments-at-scale.md): Run structured RAG experiments with Datasets, golden label validation, and side-by-side comparison of pipeline configurations.
+- [Overview](https://docs.fiddler.ai/developers/index.md)
+- [Alerts with Fiddler Client](https://docs.fiddler.ai/developers/python-client-guides/alerts-with-fiddler-client.md): Discover our guide to alerts with Fiddler Client. Learn to set up alert rules to add, delete, and list all alerts, including triggered alerts.
+- [Installation and Setup](https://docs.fiddler.ai/developers/python-client-guides/installation-and-setup.md): Explore our installation guide to set up Fiddler’s Python SDK client. Learn how to connect, install, import, authorize, and set log levels in your env…
+- [Create a Project and Model](https://docs.fiddler.ai/developers/python-client-guides/model-onboarding/create-a-project-and-model.md): Explore our guide to creating a project and onboarding a model for observation. Learn how projects organize models and define a ModelSpec and Model Ta…
+- [Customizing Your Model Schema](https://docs.fiddler.ai/developers/python-client-guides/model-onboarding/customizing-your-model-schema.md): Delve into our guide to customize your Model Schema with Fiddler. Learn how to adjust a column’s value range, possible values, and data type to match…
+- [Custom Missing Values](https://docs.fiddler.ai/developers/python-client-guides/model-onboarding/specifying-custom-missing-value-representations.md): Learn how you can customize a model column to assign values to be treated as missing or null data in order to handle a value or token that is inserted…
+- [Task Types](https://docs.fiddler.ai/developers/python-client-guides/model-onboarding/task-types.md): Explore our guide to selecting a model task type when onboarding your ML models and LLM applications.
+- [Updating Model Schema](https://docs.fiddler.ai/developers/python-client-guides/model-onboarding/updating-model-schema.md): Learn how to modify your model's schema after initial creation by adding new columns using the Python client's add\_column() method. Add features, met…
+- [Naming Convention Guidelines](https://docs.fiddler.ai/developers/python-client-guides/naming-convention-guidelines.md): Learn Fiddler's naming requirements: start with lowercase letters, use only a-z, 0-9, and underscores afterwards. See examples and best practices.
+- [Creating a Baseline Dataset](https://docs.fiddler.ai/developers/python-client-guides/publishing-production-data/creating-a-baseline-dataset.md): Learn to create a baseline dataset and detect data drift in production. Explore baseline types in Fiddler and start building one that fits your model…
+- [Deleting Events](https://docs.fiddler.ai/developers/python-client-guides/publishing-production-data/deleting-events.md): Dive into our guide on deleting existing events from your data whether due to regulatory compliance, custom data retention policies, or publishing mis…
+- [Event Deduplication](https://docs.fiddler.ai/developers/python-client-guides/publishing-production-data/event-deduplication.md): Learn how Fiddler prevents duplicate inference events from inflating your monitoring metrics.
+- [Publishing Batches of Events](https://docs.fiddler.ai/developers/python-client-guides/publishing-production-data/publishing-batches-of-events.md): Dive into our guide on publishing batches of events. Learn how Fiddler supports multiple source formats when publishing batches of events.
+- [Ranking Events](https://docs.fiddler.ai/developers/python-client-guides/publishing-production-data/ranking-events.md): Explore our guide to publishing production data. Learn how to publish and update ranking events in a grouped format with a detailed example.
+- [Streaming Live Events](https://docs.fiddler.ai/developers/python-client-guides/publishing-production-data/streaming-live-events.md): Learn how to stream your ML model's inference event data using the Fiddler Python client.
+- [Updating Events](https://docs.fiddler.ai/developers/python-client-guides/publishing-production-data/updating-events.md): Dive into our guide on updating inference events. Learn how to update your ground truth labels and metadata using the Fiddler Python client.
+- [Experiments Quick Start](https://docs.fiddler.ai/developers/quick-starts/experiments-quick-start.md): Quick start guide for running experiments on LLM applications using the Fiddler Evals SDK
+- [Get Started in <10 Minutes](https://docs.fiddler.ai/developers/quick-starts/get-started-in-less-than-10-minutes.md): Choose your integration path and get started with Fiddler in under 10 minutes
+- [Google ADK SDK Quick Start](https://docs.fiddler.ai/developers/quick-starts/google-adk-quick-start.md): Learn how to integrate Google ADK agents with Fiddler using the Fiddler ADK SDK for automatic instrumentation and comprehensive observability.
+- [Guardrails Quick Start](https://docs.fiddler.ai/developers/quick-starts/guardrails-quick-start.md): Get started with Fiddler Guardrails to protect your LLM applications from harmful content, PII leaks, and hallucinations
+- [LangChain SDK Quick Start](https://docs.fiddler.ai/developers/quick-starts/langchain-sdk-quick-start.md): Monitor AI agent behavior in LangChain V1 applications. The Fiddler LangChain SDK provides real-time observability for `create_agent`-based workflows…
+- [LangGraph SDK Quick Start](https://docs.fiddler.ai/developers/quick-starts/langgraph-sdk-quick-start.md): Monitor AI agent behavior in LangGraph and LangChain applications. Fiddler LangGraph SDK provides real-time observability for GenAI workflows and debu…
+- [OpenTelemetry Quick Start](https://docs.fiddler.ai/developers/quick-starts/opentelemetry-quick-start.md): Integrate custom AI agents and agentic frameworks with Fiddler using OpenTelemetry for comprehensive observability and monitoring in multi-framework e…
+- [Simple LLM Monitoring](https://docs.fiddler.ai/developers/quick-starts/simple-llm-monitoring.md): Learn the basic onboarding steps to use Fiddler for monitoring LLM applications. Access Google Colab or download the notebook directly from GitHub.
+- [Simple ML Monitoring](https://docs.fiddler.ai/developers/quick-starts/simple-ml-monitoring.md): This document provides a guide for using Fiddler for model monitoring using sample data provided by Fiddler.
+- [Strands Agent SDK Quick Start](https://docs.fiddler.ai/developers/quick-starts/strands-agent-quick-start.md): Learn how to integrate Strands agents with Fiddler using the Fiddler Strands SDK for automatic instrumentation and comprehensive observability of your…
+- [Experiments](https://docs.fiddler.ai/developers/tutorials/experiments.md): Master LLM and AI application experiments with comprehensive tutorials covering the Fiddler Evals SDK, custom evaluators, model comparison, and custom…
+- [Evals SDK Advanced Guide](https://docs.fiddler.ai/developers/tutorials/experiments/evals-sdk-advanced.md): Advanced experiment patterns for production LLM applications including multi-score evaluators, complex parameter mapping, and comprehensive experiment…
+- [RAG Health Metrics Tutorial](https://docs.fiddler.ai/developers/tutorials/experiments/rag-health-metrics-tutorial.md): Step-by-step guide to evaluating RAG applications using the RAG Health Metrics diagnostic triad: Answer Relevance, Context Relevance, and RAG Faithful…
+- [Guardrails](https://docs.fiddler.ai/developers/tutorials/guardrails.md)
+- [Faithfulness](https://docs.fiddler.ai/developers/tutorials/guardrails/guardrails-faithfulness.md): This Quick Start notebook introduces Fiddler Guardrails, an enterprise solution that safeguards LLM applications from risks like hallucinations, toxic…
+- [PII](https://docs.fiddler.ai/developers/tutorials/guardrails/guardrails-pii.md): Learn to detect and protect PII, PHI, and sensitive data in text using Fiddler Guardrails for PII/PHI for comprehensive privacy compliance.
+- [Safety](https://docs.fiddler.ai/developers/tutorials/guardrails/guardrails-safety.md): This Quick Start Notebook introduces Fiddler Guardrails' Safety Detection capabilities, an essential component of our enterprise solution for protecti…
+- [Secrets](https://docs.fiddler.ai/developers/tutorials/guardrails/guardrails-secrets.md): Learn to detect credentials, API keys, and tokens in text using Fiddler's Centor Secret Detection guardrail to prevent secret leakage in LLM applicati…
+- [Agentic & LLM Monitoring](https://docs.fiddler.ai/developers/tutorials/llm-monitoring.md)
+- [LangGraph SDK Advanced](https://docs.fiddler.ai/developers/tutorials/llm-monitoring/langgraph-sdk-advanced.md): Advanced observability patterns for LangGraph applications including multi-agent workflows, conversation tracking, and production configuration.
+- [Advanced Prompt Specs](https://docs.fiddler.ai/developers/tutorials/llm-monitoring/prompt-specs-advanced.md): Advanced guide to Fiddler's LLM-as-a-Judge capabilities, including custom prompting, model selection, performance optimization, and enterprise deploym…
+- [ML Monitoring](https://docs.fiddler.ai/developers/tutorials/ml-monitoring.md)
+- [Class Imbalance](https://docs.fiddler.ai/developers/tutorials/ml-monitoring/class-imbalance-monitoring-example.md): Discover how Fiddler uses class weighting to address class imbalance. Compare two identical models–with and without weighting–to detect drift signals.
+- [CV Inputs](https://docs.fiddler.ai/developers/tutorials/ml-monitoring/cv-monitoring.md): Explore our guide to using Fiddler’s monitoring for computer vision models. Learn to detect drift in image data with our unique Vector Monitoring appr…
+- [Model Versions](https://docs.fiddler.ai/developers/tutorials/ml-monitoring/ml-monitoring-model-versions.md): Explore our guide to using Fiddler’s sample data to set up and manage multiple versions of a model with the powerful Model Versions feature.
+- [Regression](https://docs.fiddler.ai/developers/tutorials/ml-monitoring/ml-monitoring-regression.md): Check out our guide on using Fiddler to evaluate regression models. See examples of detecting issues using data drift and performance metrics like MAE.
+- [Ranking Models](https://docs.fiddler.ai/developers/tutorials/ml-monitoring/ranking-model.md): Explore our notebook to see how Fiddler monitors ranking models using a public dataset organized around “search result impressions” from Expedia hotel…
+- [NLP Inputs](https://docs.fiddler.ai/developers/tutorials/ml-monitoring/simple-nlp-monitoring-quick-start.md): Dive into our guide on using Fiddler to monitor NLP models. Learn how a multi-class classifier is applied to the dataset and monitored with Vector Mon…
+- [Feature Impact](https://docs.fiddler.ai/developers/tutorials/ml-monitoring/user-defined-feature-impact.md): Leverage this guide on using Fiddler's feature impact upload API to supply your own feature impact values for your Fiddler model.
+- [Configure Evaluator Downsampling](https://docs.fiddler.ai/evaluate-and-test/configure-evaluator-downsampling.md): Reduce LLM-as-a-Judge evaluation cost at scale with evaluator downsampling. Learn when to use it, how the sampling rate relates to the enabled toggle,…
+- [Evals SDK Quick Start](https://docs.fiddler.ai/evaluate-and-test/evals-sdk-quick-start.md): Learn how to evaluate Large Language Model (LLM) applications, RAG systems, and AI agents using the Fiddler Evals SDK with built-in and custom evaluat…
+- [Evaluator Downsampling Quick Start](https://docs.fiddler.ai/evaluate-and-test/evaluator-downsampling-quick-start.md): Get started with evaluator downsampling: score only a fraction of matching traces to cut LLM-as-a-Judge cost, configured per rule from the UI or the R…
+- [Evaluator Rules](https://docs.fiddler.ai/evaluate-and-test/evaluator-rules.md): Configure automated evaluations for your GenAI application spans using Evaluator Rules. Learn to map evaluators to span data, define application rules…
+- [Compare LLM Outputs](https://docs.fiddler.ai/evaluate-and-test/llm-evaluation-example.md): Learn how to systematically compare outputs from different LLM models (GPT-3.5, Claude, etc.) using Fiddler's pre-production evaluation environment to…
+- [Overview](https://docs.fiddler.ai/evaluate-and-test/overview.md): Hands-on quick start guides for evaluating LLM applications, testing with custom LLM-as-a-Judge metrics, and comparing model outputs using Fiddler Exp…
+- [Prompt Specs Quick Start](https://docs.fiddler.ai/evaluate-and-test/prompt-specs-quick-start.md): Get started with Fiddler's LLM-as-a-Judge evaluation using Prompt Specs in minutes. Learn to create custom evaluations, test them, and deploy to produ…
+- [Agentic Observability](https://docs.fiddler.ai/getting-started/agentic-monitoring.md): Comprehensive monitoring, tracing, and analysis of AI agent systems that provide hierarchical visibility into agent reasoning, coordination, and decis…
+- [AWS SageMaker Partner AI App](https://docs.fiddler.ai/getting-started/aws-sagemaker-partner-ai-app.md): Get started with Fiddler's Partner AI App on AWS SageMaker. Monitor, explain, and analyze your ML models and GenAI apps in your own AWS environment.
+- [Evaluators & Metrics Guide](https://docs.fiddler.ai/getting-started/evaluators-metrics-guide.md): Interactive guide for selecting the right Fiddler evaluators and metrics for your use case. Filter by observability type, use case, and rating to find…
+- [Experiments](https://docs.fiddler.ai/getting-started/experiments.md): Systematically evaluate and compare your LLM and agentic applications with confidence using Fiddler Experiments - comprehensive evaluation framework w…
+- [Onboard Your GenAI Application](https://docs.fiddler.ai/getting-started/genai-application-onboarding.md): Set up your first GenAI project and application in Fiddler. Learn how to create projects, configure applications, and start monitoring your GenAI inte…
+- [Guardrails](https://docs.fiddler.ai/getting-started/guardrails.md): Fiddler Guardrails protects GenAI and agentic applications against hallucinations, safety risks, and jailbreaks in real time — available via the Fiddl…
+- [LLM Monitoring](https://docs.fiddler.ai/getting-started/llm-monitoring.md): Monitor LLM applications in production with Fiddler. Track quality, safety, and performance enrichments, detect problematic responses, and diagnose is…
+- [ML Observability](https://docs.fiddler.ai/getting-started/ml-observability.md): Monitor traditional ML models in production with Fiddler. Track performance, detect data drift, run root cause analysis, and ensure model fairness at…
+- [Agentic Observability](https://docs.fiddler.ai/glossary/agentic-observability.md): Comprehensive monitoring, tracing, and analysis of AI agent systems that provides hierarchical visibility into agent reasoning, coordination, and deci…
+- [Baseline](https://docs.fiddler.ai/glossary/baseline.md): Reference datasets in Fiddler that serve as comparison points for detecting data drift, evaluating model performance, and identifying when production…
+- [Fiddler Centor Models](https://docs.fiddler.ai/glossary/centor-models.md): Purpose-built LLMs that evaluate AI outputs in real time, powering both monitoring metrics and real-time guardrails with significantly lower latency t…
+- [Custom Metric](https://docs.fiddler.ai/glossary/custom-metrics.md): User-defined calculations in Fiddler that extend monitoring beyond standard metrics, allowing teams to track business-specific KPIs and specialized me…
+- [Data Drift](https://docs.fiddler.ai/glossary/data-drift.md): The statistical change in data distributions over time that can impact model performance. Fiddler detects drift by comparing production data against b…
+- [Embedding Visualization](https://docs.fiddler.ai/glossary/embedding-visualization.md): Interactive visualizations in Fiddler AI that transform complex embedding vectors into 3D displays, revealing semantic patterns, clusters, and outlier…
+- [Enrichment](https://docs.fiddler.ai/glossary/enrichment.md): Comprehensive overview of enrichments in AI monitoring and evaluation. Learn how Fiddler's enrichment framework transforms raw LLM data into actionabl…
+- [Experiments](https://docs.fiddler.ai/glossary/experiments.md): Systematic assessment of LLM application quality through structured testing with datasets, evaluators, and experiments that enable data-driven decisio…
+- [Fiddler Guardrails](https://docs.fiddler.ai/glossary/guardrails.md): Fiddler Guardrails is a real-time content-safety capability that evaluates and filters harmful LLM outputs before they reach users, powered by Fiddler…
+- [Glossary](https://docs.fiddler.ai/glossary/index.md): Review product concepts and terminology for the Fiddler platform to help get up to speed quickly when adopting Fiddler for your ML and GenAI monitorin…
+- [LLM Observability](https://docs.fiddler.ai/glossary/llm-observability.md): Comprehensive monitoring of LLM applications that evaluates safety, quality, and performance metrics to detect issues like hallucinations, toxicity, a…
+- [Metric](https://docs.fiddler.ai/glossary/metric.md): Metrics in Fiddler AI are quantitative measurements that evaluate model behavior, data quality, and performance over time, enabling proactive monitori…
+- [ML Observability](https://docs.fiddler.ai/glossary/ml-observability.md): A comprehensive approach to monitoring AI systems that goes beyond performance metrics to provide insights into model behavior, data quality, and root…
+- [Model Drift](https://docs.fiddler.ai/glossary/model-drift.md): Changes in model performance over time due to shifting data patterns, concept evolution, or system degradation. Fiddler detects and diagnoses model dr…
+- [Model Performance](https://docs.fiddler.ai/glossary/model-performance.md): Quantitative evaluation of AI model accuracy and effectiveness in production. Fiddler tracks performance metrics over time to detect degradation and i…
+- [Trust Score](https://docs.fiddler.ai/glossary/trust-score.md): Quantitative scores generated by Fiddler's enrichment processes that measure LLM output quality and safety. These numerical metrics enable monitoring,…
+- [Introduction to Fiddler](https://docs.fiddler.ai/index.md): The only platform delivering enterprise-grade visibility, context, and control across traditional ML models, LLM applications, and autonomous multi-ag…
+- [Agentic AI Overview](https://docs.fiddler.ai/integrations/agentic-ai-and-llm-frameworks/agentic-ai.md): Native SDKs and framework integrations for agentic AI and LLM applications
+- [AgentGateway Integration](https://docs.fiddler.ai/integrations/agentic-ai/agentgateway-integration.md): Integrate AgentGateway with Fiddler for zero-instrumentation LLM observability — no application code changes required.
+- [Span and Resource Attributes](https://docs.fiddler.ai/integrations/agentic-ai/attributes.md): Understand how Fiddler uses span and resource attributes from OpenTelemetry traces — required vs optional fields, typing, custom attributes, and how a…
+- [Claude Code Integration](https://docs.fiddler.ai/integrations/agentic-ai/claude-code-integration.md): Integrate Claude Code with Fiddler for coding agent observability — track LLM calls, tool usage, user prompts, and session behavior via OpenTelemetry…
+- [Fiddler Evals SDK](https://docs.fiddler.ai/integrations/agentic-ai/evals-sdk.md): LLM experiments framework with pre-built evaluators and custom metrics
+- [Fiddler OTel SDK](https://docs.fiddler.ai/integrations/agentic-ai/fiddler-otel-sdk.md): Instrument any Python AI agent or LLM application with Fiddler's core OpenTelemetry SDK
+- [Fiddler Google ADK SDK](https://docs.fiddler.ai/integrations/agentic-ai/google-adk-sdk.md): Native monitoring for Google ADK agents with Fiddler's purpose-built SDK
+- [Kong AI Gateway Integration](https://docs.fiddler.ai/integrations/agentic-ai/kong-integration.md): Integrate Kong AI Gateway with Fiddler for zero-instrumentation LLM observability — no application code changes required.
+- [Fiddler LangChain SDK](https://docs.fiddler.ai/integrations/agentic-ai/langchain-sdk.md): Instrument LangChain V1 agents with Fiddler observability
+- [Fiddler LangGraph SDK](https://docs.fiddler.ai/integrations/agentic-ai/langgraph-sdk.md): Instrument LangGraph agents and custom AI applications with Fiddler's native SDK
+- [LiteLLM Integration](https://docs.fiddler.ai/integrations/agentic-ai/litellm-integration.md): Integrate LiteLLM with Fiddler for unified LLM cost tracking, latency monitoring, and LLM call observability — via the LiteLLM SDK or the LiteLLM prox…
+- [OpenTelemetry Integration](https://docs.fiddler.ai/integrations/agentic-ai/opentelemetry-integration.md): Connect custom AI agents and multi-framework agentic applications to Fiddler using OpenTelemetry's OTLP protocol for comprehensive observability.
+- [Exporting OTel Traces to Fiddler](https://docs.fiddler.ai/integrations/agentic-ai/otel-trace-export.md): Map pre-existing OpenTelemetry span attributes to Fiddler's schema and export them to the v1/traces protobuf endpoint from your own storage or pipelin…
+- [S3 Trace Ingestion](https://docs.fiddler.ai/integrations/agentic-ai/s3-trace-ingestion.md): Ingest pre-generated OTLP trace files from Amazon S3 into Fiddler without modifying your application code. Ideal for ECS Fargate, air-gapped environme…
+- [Fiddler Strands SDK](https://docs.fiddler.ai/integrations/agentic-ai/strands-sdk.md): Native monitoring for Strands Agents with Strands Agents SDK
+- [Admin Guide](https://docs.fiddler.ai/integrations/aws-sagemaker/partner-ai-app-admin-guide.md): Admin guide to deploy the Fiddler Partner AI App on AWS SageMaker. Configure IAM roles, permissions, and subscriptions for secure AI systems observabi…
+- [Quick Setup Script](https://docs.fiddler.ai/integrations/aws-sagemaker/partner-ai-app-quick-setup-script.md): Quickly set up Fiddler's Partner AI App on SageMaker with our script. Automates IAM roles, permissions, and configuration for fast deployment.
+- [User Guide](https://docs.fiddler.ai/integrations/aws-sagemaker/partner-ai-app-user-guide.md): User guide for Fiddler on AWS SageMaker. Learn to use the Fiddler UI and Python SDK to monitor, explain, and analyze your models and GenAI apps.
+- [AWS SageMaker Partner AI App](https://docs.fiddler.ai/integrations/cloud-platforms-and-deployment/aws-sagemaker.md): Run Fiddler AI Observability platform within Amazon SageMaker as a Partner AI App. Procure, provision, and securely operate Fiddler seamlessly all wit…
+- [Cloud Platforms Overview](https://docs.fiddler.ai/integrations/cloud-platforms-and-deployment/cloud-platforms.md): Deploy and operate Fiddler natively on leading cloud platforms
+- [Data Platforms Overview](https://docs.fiddler.ai/integrations/data-platforms-and-pipelines/data-platforms.md): Connect Fiddler to data warehouses, streaming platforms, and ML pipelines
+- [Apache Airflow](https://docs.fiddler.ai/integrations/data-platforms/airflow-integration.md): Discover how to integrate Fiddler with an Airflow DAG for your ML pipeline, enabling you to train, manage, onboard models, and monitor performance sea…
+- [BigQuery](https://docs.fiddler.ai/integrations/data-platforms/bigquery-integration.md): Discover BigQuery integration with Fiddler. Learn how to load ML data from BigQuery tables and use it for tasks like publishing production data to Fid…
+- [Amazon S3](https://docs.fiddler.ai/integrations/data-platforms/integration-with-s3.md): Effortlessly extract AWS S3 data for model onboarding and inference publishing to Fiddler for monitoring.
+- [Apache Kafka](https://docs.fiddler.ai/integrations/data-platforms/kafka-integration.md): Dive into Fiddler’s Kafka connector services. Learn about prerequisites, installation, and limitations to manage production events and publish them to…
+- [SageMaker Pipelines](https://docs.fiddler.ai/integrations/data-platforms/sagemaker-integration.md): Learn how integrating SageMaker with Fiddler simplifies model monitoring. Explore our guide on using AWS Lambda with the Fiddler Python client.
+- [Snowflake](https://docs.fiddler.ai/integrations/data-platforms/snowflake-integration.md): Learn how to extract baseline or production data from Snowflake for model onboarding and publishing production data to Fiddler for ML and LLM monitori…
+- [Integrations](https://docs.fiddler.ai/integrations/index.md)
+- [ML Platforms Overview](https://docs.fiddler.ai/integrations/ml-platforms-and-tools/ml-platforms.md): Integrate Fiddler with MLOps platforms, experiment tracking tools, and ML frameworks
+- [Databricks](https://docs.fiddler.ai/integrations/ml-platforms/databricks-integration.md): Discover how Fiddler helps monitor, explain, and analyze models in Databricks Workspace. Integrate with MLFlow and Spark to manage, validate, and moni…
+- [MLflow](https://docs.fiddler.ai/integrations/ml-platforms/ml-flow-integration.md): Explore how Fiddler helps your team onboard, monitor, explain, and analyze models with MLFlow. Learn to ingest model metadata and artifacts for observ…
+- [Datadog](https://docs.fiddler.ai/integrations/monitoring-alerting/datadog-integration.md): Learn about Fiddler’s Datadog integration to bring AI Observability metrics into your dashboards. Follow steps to centralize ML model and application…
+- [PagerDuty](https://docs.fiddler.ai/integrations/monitoring-alerting/pagerduty.md): Discover how customer churn prediction works with Fiddler’s AI observability platform. Follow our example to detect and diagnose issues step by step.
+- [Monitoring & Alerting Overview](https://docs.fiddler.ai/integrations/monitoring-and-alerting/monitoring-alerting.md): Connect Fiddler alerts to incident management, observability, and communication tools
+- [Custom Metrics for Agentic Applications](https://docs.fiddler.ai/observability/agentic/custom-metrics.md): Define custom metrics for your agentic and GenAI applications using FQL and span attributes to track business KPIs, quality scores, and operational si…
+- [Agentic Observability](https://docs.fiddler.ai/observability/agentic/index.md): Monitor AI agents and multi-step workflows with specialized dashboards, metrics, and trace visualization
+- [Explorer](https://docs.fiddler.ai/observability/agentic/trace-explorer.md): Explore, filter, and search every span ingested into your GenAI application with the Explorer DataGrid.
+- [Events Table in RCA](https://docs.fiddler.ai/observability/analytics/data-table-in-rca.md): Learn how to use Fiddler's root cause analysis features to quickly hone in on the data issues adversely impacting your ML models and LLM applications.
+- [Feature Analytics](https://docs.fiddler.ai/observability/analytics/feature-analytics-chart.md): Dive into our guide on creating feature analytics charts and visualizations for important features in your ML Models and LLM applications.
+- [Analytics](https://docs.fiddler.ai/observability/analytics/index.md): Explore our UI guide to Fiddler analytics. Learn about interfaces for various analytics charts and root cause analysis to better understand your model…
+- [Metric Card](https://docs.fiddler.ai/observability/analytics/metric-card.md): Dive into our guide for metric card creation. Follow step-by-step instructions to create metric cards, use custom metrics, right-side controls, and sa…
+- [Performance Charts Creation](https://docs.fiddler.ai/observability/analytics/performance-charts-creation.md): Discover our guide to creating performance charts. Learn key steps to select charts, use right-side and in-chart controls, and save your customized ch…
+- [Performance Charts Visualization](https://docs.fiddler.ai/observability/analytics/performance-charts-visualization.md): Dive into our guide on performance charts and visualizations used to monitor the behavior and performance of your ML models.
+- [Dashboard Interactions](https://docs.fiddler.ai/observability/dashboards/dashboard-interactions.md): Explore our guide to dashboard interactions. Learn to remove, edit, zoom into charts, switch between bar and line views, and undo toolbar changes.
+- [Dashboard Utilities](https://docs.fiddler.ai/observability/dashboards/dashboard-utilities.md): Discover dashboard utilities on Fiddler’s platform. Learn to rename, save, share, copy links, or delete dashboards to manage your collection effortles…
+- [Creating Dashboards](https://docs.fiddler.ai/observability/dashboards/dashboards-creating.md): Navigate our guide for the Dashboard page. Learn how to select new or existing dashboards and access them to monitor performance, drift, integrity, an…
+- [Dashboards](https://docs.fiddler.ai/observability/dashboards/index.md): Explore our guide to Fiddler’s dashboards for centralized monitoring. Discover key features like filters, utilities, default dashboards, and performan…
+- [Fairness](https://docs.fiddler.ai/observability/fairness.md): Explore our walkthrough of ML model fairness and bias. Review the sample calculations you can customize to your data and use with Fiddler's custom met…
+- [Embedding Visualizations](https://docs.fiddler.ai/observability/llm/embedding-visualization-with-umap.md): Explore our guide on embedding visualization to enhance LLM monitoring. Discover UMAP techniques, analyze high-dimensional data, and uncover patterns…
+- [Enrichments](https://docs.fiddler.ai/observability/llm/enrichments.md): Explore our guide on how Fiddler can enrich your LLM application's data to help analyze and evaluate application behavior and performance.
+- [LLM Monitoring](https://docs.fiddler.ai/observability/llm/index.md): Explore our guide to LLM application monitoring. Learn how Fiddler generates enrichments using trust and safety metrics for alerting, analysis, and de…
+- [LLM-Based Metrics](https://docs.fiddler.ai/observability/llm/llm-based-metrics.md): Explore our guide on LLM-specific metrics useful for evaluating AI-generated content for use cases like chatbots, writing assistants, or content creat…
+- [LLM Evaluation Prompt Specs](https://docs.fiddler.ai/observability/llm/llm-evaluation-prompt-specs.md): Prompt specs is a framework Fiddler provides for leveraging a general-purpose LLM to quickly create custom scoring functions without the need to manua…
+- [Selecting Enrichments](https://docs.fiddler.ai/observability/llm/selecting-enrichments.md): Learn about Fiddler’s enrichments and monitor key aspects of LLM applications. Discover the different factors to analyze for your specific use case.
+- [Model UI](https://docs.fiddler.ai/observability/model-ui/index.md): Learn about Fiddler's no-code Model Editor for streamlined ML model onboarding, featuring draft mode for iterative development and team collaboration.
+- [Model Editor](https://docs.fiddler.ai/observability/model-ui/model-editor.md): Step-by-step instructions for onboarding ML models using Fiddler's UI-based editor, from dataset upload to schema validation and publication.
+- [Model Schema Editing](https://docs.fiddler.ai/observability/model-ui/model-schema-editing.md): Learn how to modify numeric ranges, edit categorical features, and add metadata columns to keep your model schema aligned with evolving production dat…
+- [Overview](https://docs.fiddler.ai/observability/monitoring.md): Monitor production models in real-time with comprehensive observability
+- [Alerts](https://docs.fiddler.ai/observability/platform/alerts-platform.md): Discover how to enhance monitoring with Alerts. Learn about alert types and how to set up and view them using the alerts tab in the navigation bar.
+- [Class Imbalanced Data](https://docs.fiddler.ai/observability/platform/class-imbalanced-data.md): Explore how Fiddler uses weighting to help improve drift detection when class distribution is highly imbalanced.
+- [Custom Metrics](https://docs.fiddler.ai/observability/platform/custom-metrics.md): Dive into our guide to enhancing ML and LLM insights with custom metrics. Learn to define, add, access, modify, and delete custom metrics in charts an…
+- [Data Drift](https://docs.fiddler.ai/observability/platform/data-drift-platform.md): Learn about data drift and how Fiddler can monitor your ML model data for drift to provide early detection of issues that could impact model performan…
+- [Data Integrity](https://docs.fiddler.ai/observability/platform/data-integrity-platform.md): Dive into our guide on ensuring data integrity in ML models and LLMs. Learn to monitor violations with Fiddler’s auto-generated charts and alerts.
+- [Embedding Visualization](https://docs.fiddler.ai/observability/platform/embedding-visualization-with-umap.md): Dive into our guide on embedding visualization with UMAP in Fiddler. Learn to create charts, select parameters, and interact with visualizations.
+- [Fiddler Query Language](https://docs.fiddler.ai/observability/platform/fiddler-query-language.md): Explore our guide on using Fiddler Query Language to build custom metrics to drive additional business value in dashboards and extra capability in ale…
+- [Monitoring Platform](https://docs.fiddler.ai/observability/platform/index.md): Dive into our guide to optimizing ML models and LLM applications with Fiddler’s monitoring tools. Learn key metrics to track data drift, performance,…
+- [Model Versions](https://docs.fiddler.ai/observability/platform/model-versions.md): Discover model versions in Fiddler. Learn structured approaches to managing related models, their use cases, capabilities, and how to create a model v…
+- [Monitoring Charts](https://docs.fiddler.ai/observability/platform/monitoring-charts-platform.md): Explore our guide to the monitoring charts UI. Learn how to create charts, explore functions, customize tabs, and track LLM metrics effectively.
+- [Performance Tracking](https://docs.fiddler.ai/observability/platform/performance-tracking-platform.md): Learn to track performance with Fiddler. Discover why performance metrics matter and the steps to take when your model isn’t performing as expected.
+- [Segments](https://docs.fiddler.ai/observability/platform/segments.md): Learn to use model segments for monitoring diverse dimensions. Define, add, and modify segments to gain valuable insights into specific cohorts and di…
+- [Statistics](https://docs.fiddler.ai/observability/platform/statistics.md): Discover Fiddler’s statistical metrics guide to monitor column aggregations. Learn what’s tracked, how to monitor metrics, and how to set up alerts.
+- [Template-Based Alerts](https://docs.fiddler.ai/observability/platform/template-based-alerts.md): Learn how to create and deploy template-based alerts in Fiddler using Google Sheets and YAML configurations for efficient model monitoring.
+- [Traffic](https://docs.fiddler.ai/observability/platform/traffic-platform.md): Learn how Fiddler tracks your ML and GenAI models' traffic patterns and when to take action when traffic patterns deviate from normal.
+- [Vector Monitoring](https://docs.fiddler.ai/observability/platform/vector-monitoring-platform.md): Dive into our vector monitoring guide to learn about model inputs represented as vectors and how to use Fiddler's custom features to monitor and detec…
+- [Guardrails](https://docs.fiddler.ai/protection/guardrails.md): Fiddler Guardrails is a powerful solution designed to serve as the first-line of defense to protect enterprises from costly GenAI and LLM risks in rea…
+- [Guardrails FAQ](https://docs.fiddler.ai/protection/guardrails-faq.md): Find answers to common questions about Fiddler Guardrails, including setup, implementation, and general information for protecting your LLM applicatio…
+- [Guardrails Quick Start](https://docs.fiddler.ai/protection/guardrails-quick-start.md): Set up access to Fiddler Guardrails in your Fiddler environment and make your first API call to protect your LLM applications.
+- [Overview](https://docs.fiddler.ai/protection/index.md): Ensure AI safety and compliance with guardrails and monitoring
+- [LiteLLM Guardrails](https://docs.fiddler.ai/protection/litellm-guardrails.md): Use Fiddler as a guardrail provider for the LiteLLM proxy gateway — blocking and redacting PII and secrets in real time before requests reach your LLM.
+- [Authentication Management](https://docs.fiddler.ai/reference/access-control/authn-authentication-management-console.md)
+- [Email Login](https://docs.fiddler.ai/reference/access-control/email-login.md): This page documents the details of Fiddler's native email-based authentication including user account creation and password policy.
+- [Google OIDC](https://docs.fiddler.ai/reference/access-control/google-integration.md): Learn how to configure Fiddler with Google for Single Sign-On (SSO) using the OpenID Connect (OIDC) protocol.
+- [Access Control](https://docs.fiddler.ai/reference/access-control/index.md): Explore our guides on authentication options with leading IDPs like Okta and PingOne. Dive deep into authorization topics using the Fiddler UI.
+- [Mapping IdP Groups to Teams](https://docs.fiddler.ai/reference/access-control/mapping-ad-groups-to-fiddler-teams.md): This document describes the naming convention and rules for mapping internal AD groups to Fiddler Teams automatically.
+- [Okta OIDC](https://docs.fiddler.ai/reference/access-control/okta-integration.md): Learn how to configure Fiddler with Okta for Single Sign-On (SSO) using the OpenID Connect (OIDC) protocol.
+- [Okta SAML](https://docs.fiddler.ai/reference/access-control/okta-integration-saml.md): Learn how to configure Fiddler with Okta for Single Sign-On (SSO) using the Security Assertion Markup Language (SAML) protocol.
+- [PingOne SAML](https://docs.fiddler.ai/reference/access-control/ping-identity-saml.md): Learn how to configure Fiddler with PingOne for Single Sign-On (SSO) using the Security Assertion Markup Language (SAML) protocol.
+- [Role-Based Access Control](https://docs.fiddler.ai/reference/access-control/role-based-access.md): Learn how Fiddler uses role-based access control with resources and roles. Discover how to manage access with resources, roles, and permissions in you…
+- [Microsoft Entra ID OIDC](https://docs.fiddler.ai/reference/access-control/single-sign-on-with-azure-ad.md): Learn how to configure Fiddler with Microsoft Entra ID (formerly Azure AD) for Single Sign-On (SSO) using the OpenID Connect (OIDC) protocol.
+- [SSO Authentication Guide](https://docs.fiddler.ai/reference/access-control/sso-authentication-guide.md): Configure Single Sign-On authentication for Fiddler with Okta, Azure AD, Google, Ping, and others. Complete setup guide with troubleshooting tips.
+- [AWS VPC Endpoint Setup](https://docs.fiddler.ai/reference/administration/aws-vpc-endpoint-setup.md): Automated script to create AWS VPC endpoints for secure communication with Fiddler Cloud using AWS Virtual PrivateLink.
+- [AWS Virtual PrivateLink Setup](https://docs.fiddler.ai/reference/administration/aws-vpl-setup.md): Step-by-step guide to configure AWS Virtual PrivateLink for secure communication between your AWS VPC and Fiddler Cloud.
+- [LLM Gateway](https://docs.fiddler.ai/reference/administration/llm-gateway.md): Configure LLM provider credentials to enable AI-powered features in Fiddler using your own API keys from OpenAI, Anthropic, Gemini, and other provider…
+- [Administration](https://docs.fiddler.ai/reference/administration/settings.md): Dive into our guide to application settings in Fiddler. Learn to use the settings page to manage team setup, permissions, and credentials.
+- [Supported Browsers](https://docs.fiddler.ai/reference/administration/supported-browsers.md): Discover our product guide on supported web browsers for accessing Fiddler, including Google Chrome, Firefox, Safari, and Microsoft Edge.
+- [Feature Maturity Definitions](https://docs.fiddler.ai/reference/feature-maturity-definitions.md): Review Fiddler's release and support policies for product features at different stages of maturity.
+- [LLM Observability Metrics Reference](https://docs.fiddler.ai/reference/llm-observability-metrics.md): Complete reference of all LLM observability metrics and enrichments supported by the Fiddler monitoring platform.
+- [ML Metrics Reference](https://docs.fiddler.ai/reference/ml-metrics-reference.md): Complete reference of all built-in ML metrics supported by the Fiddler monitoring platform, organized by category and model task type.
+- [Python Version Support Policy](https://docs.fiddler.ai/reference/python-support-policy.md): How Fiddler's Python SDKs decide which Python versions they support, and when support for a version ends.
+- [ADKSpanProcessor](https://docs.fiddler.ai/sdk-api/adk/adk-span-processor.md): Span processor that backfills session identity onto ADK root spans.
+- [GoogleADKInstrumentor](https://docs.fiddler.ai/sdk-api/adk/google-adk-instrumentor.md): OpenTelemetry instrumentor for Google ADK agents.
+- [Introduction](https://docs.fiddler.ai/sdk-api/adk/index.md): Complete API reference for fiddler-adk
+- [AnswerRelevance](https://docs.fiddler.ai/sdk-api/evals/answer-relevance.md): Evaluator to assess how well an answer addresses a given question with optional context.
+- [Application](https://docs.fiddler.ai/sdk-api/evals/application.md): Represents a GenAI Application container for organizing GenAI application resources.
+- [Coherence](https://docs.fiddler.ai/sdk-api/evals/coherence.md): Evaluator to assess the coherence and logical flow of a response.
+- [Conciseness](https://docs.fiddler.ai/sdk-api/evals/conciseness.md): Evaluator to assess how concise and to-the-point an answer is.
+- [Connection](https://docs.fiddler.ai/sdk-api/evals/connection.md): Manages authenticated connections to the Fiddler platform.
+- [ContextRelevance](https://docs.fiddler.ai/sdk-api/evals/context-relevance.md): Evaluator to assess how relevant retrieved documents are to a user query.
+- [CustomJudge](https://docs.fiddler.ai/sdk-api/evals/custom-judge.md): Create a fully customizable LLM-as-a-Judge evaluator with your own prompt and output schema.
+- [CustomJudgeSpec](https://docs.fiddler.ai/sdk-api/evals/custom-judge-spec.md): Reusable prompt specification for CustomJudge evaluators.
+- [Dataset](https://docs.fiddler.ai/sdk-api/evals/dataset.md): Represents a Dataset container for organizing evaluation test cases.
+- [DatasetItem](https://docs.fiddler.ai/sdk-api/evals/dataset-item.md): Dataset item from Fiddler API
+- [EvalFn](https://docs.fiddler.ai/sdk-api/evals/eval-fn.md): Evaluator that wraps a user-provided function for dynamic evaluation.
+- [evaluate](https://docs.fiddler.ai/sdk-api/evals/evaluate.md): Evaluate a dataset using a task function and a list of evaluators.
+- [Evaluator](https://docs.fiddler.ai/sdk-api/evals/evaluator.md): Abstract base class for creating custom evaluators in Fiddler Evals.
+- [Experiment](https://docs.fiddler.ai/sdk-api/evals/experiment.md): Represents an Experiment for tracking evaluation runs and results.
+- [ExperimentItemStatus](https://docs.fiddler.ai/sdk-api/evals/experiment-item-status.md): ExperimentItemStatus
+- [ExperimentStatus](https://docs.fiddler.ai/sdk-api/evals/experiment-status.md): ExperimentStatus
+- [FTLPromptSafety](https://docs.fiddler.ai/sdk-api/evals/ftl-prompt-safety.md): Evaluator to assess prompt safety using Fiddler Centor Models.
+- [FTLResponseFaithfulness](https://docs.fiddler.ai/sdk-api/evals/ftl-response-faithfulness.md): Evaluator to assess response faithfulness using Fiddler Centor Models.
+- [FTLSecretDetection](https://docs.fiddler.ai/sdk-api/evals/ftl-secret-detection.md): Evaluator to detect credentials, API keys, and tokens in text using Fiddler Centor Models.
+- [Introduction](https://docs.fiddler.ai/sdk-api/evals/index.md): Complete API reference for fiddler-evals
+- [init](https://docs.fiddler.ai/sdk-api/evals/init.md): Initialize the Fiddler client with connection parameters and global configuration.
+- [InputFieldSpec](https://docs.fiddler.ai/sdk-api/evals/input-field-spec.md): Metadata for a template variable (input field).
+- [Message](https://docs.fiddler.ai/sdk-api/evals/message.md): A single message in a prompt template.
+- [NewDatasetItem](https://docs.fiddler.ai/sdk-api/evals/new-dataset-item.md): Model to create a new dataset
+- [OutputField](https://docs.fiddler.ai/sdk-api/evals/output-field.md): Schema for a single output field in the evaluation response.
+- [OutputFieldTransform](https://docs.fiddler.ai/sdk-api/evals/output-field-transform.md): Defines how to transform an LLM output field into a final output field.
+- [Project](https://docs.fiddler.ai/sdk-api/evals/project.md): Represents a project container for organizing GenAI Apps and resources.
+- [RAGFaithfulness](https://docs.fiddler.ai/sdk-api/evals/rag-faithfulness.md): Evaluator to assess if an LLM response is faithful to the provided context.
+- [RegexMatch](https://docs.fiddler.ai/sdk-api/evals/regex-match.md): Regex match attempts to match the regex pattern only at the beginning
+- [RegexSearch](https://docs.fiddler.ai/sdk-api/evals/regex-search.md): Regex search scans the entire string from beginning to end, looking for the
+- [Score](https://docs.fiddler.ai/sdk-api/evals/score.md): A single output of an evaluator.
+- [ScoreStatus](https://docs.fiddler.ai/sdk-api/evals/score-status.md): The status of a score.
+- [Sentiment](https://docs.fiddler.ai/sdk-api/evals/sentiment.md): Evaluator to assess text sentiment using Fiddler's sentiment analysis model.
+- [TopicClassification](https://docs.fiddler.ai/sdk-api/evals/topic-classification.md): Evaluator to classify text topics using Fiddler's zero-shot topic classification model.
+- [Overview](https://docs.fiddler.ai/sdk-api/index.md)
+- [addSessionAttributes](https://docs.fiddler.ai/sdk-api/langchain-js/add-session-attributes.md): addSessionAttributes
+- [CallbackManagerModule](https://docs.fiddler.ai/sdk-api/langchain-js/callback-manager-module.md): Shape of the `@langchain/core/callbacks/manager` module export.
+- [extractTextContent](https://docs.fiddler.ai/sdk-api/langchain-js/extract-text-content.md): extractTextContent
+- [FiddlerCallbackHandler](https://docs.fiddler.ai/sdk-api/langchain-js/fiddler-callback-handler.md): LangChain callback handler that creates Fiddler OTel spans for every
+- [formatMessages](https://docs.fiddler.ai/sdk-api/langchain-js/format-messages.md): formatMessages
+- [getConversationId](https://docs.fiddler.ai/sdk-api/langchain-js/get-conversation-id.md): getConversationId
+- [getLlmContext](https://docs.fiddler.ai/sdk-api/langchain-js/get-llm-context.md): getLlmContext
+- [getProviderFromModel](https://docs.fiddler.ai/sdk-api/langchain-js/get-provider-from-model.md): getProviderFromModel
+- [getSessionAttributes](https://docs.fiddler.ai/sdk-api/langchain-js/get-session-attributes.md): getSessionAttributes
+- [Introduction](https://docs.fiddler.ai/sdk-api/langchain-js/index.md): Complete API reference for fiddler-langchain-js
+- [LangChainInstrumentor](https://docs.fiddler.ai/sdk-api/langchain-js/lang-chain-instrumentor.md): Auto-instruments LangChain/LangGraph by monkey-patching
+- [runWithContext](https://docs.fiddler.ai/sdk-api/langchain-js/run-with-context.md): runWithContext
+- [safeStringify](https://docs.fiddler.ai/sdk-api/langchain-js/safe-stringify.md): safeStringify
+- [setConversationId](https://docs.fiddler.ai/sdk-api/langchain-js/set-conversation-id.md): setConversationId
+- [setLlmContext](https://docs.fiddler.ai/sdk-api/langchain-js/set-llm-context.md): setLlmContext
+- [truncate](https://docs.fiddler.ai/sdk-api/langchain-js/truncate.md): truncate
+- [add_session_attributes](https://docs.fiddler.ai/sdk-api/langchain/add-session-attributes.md): Add a session-level attribute that appears on all spans in the current context.
+- [add_span_attributes](https://docs.fiddler.ai/sdk-api/langchain/add-span-attributes.md): Add custom span-level attributes to a specific LangChain component's metadata.
+- [clear_llm_context](https://docs.fiddler.ai/sdk-api/langchain/clear-llm-context.md): Remove LLM context from a language model instance.
+- [FiddlerAgentMiddleware](https://docs.fiddler.ai/sdk-api/langchain/fiddler-agent-middleware.md): LangChain V1 middleware that instruments `create_agent` calls with Fiddler tracing.
+- [FiddlerLangChainInstrumentor](https://docs.fiddler.ai/sdk-api/langchain/fiddler-lang-chain-instrumentor.md): Auto-instrumentor for LangChain V1 agents.
+- [Introduction](https://docs.fiddler.ai/sdk-api/langchain/index.md): Complete API reference for fiddler-langchain
+- [set_conversation_id](https://docs.fiddler.ai/sdk-api/langchain/set-conversation-id.md): Set the conversation ID for the current execution context.
+- [set_llm_context](https://docs.fiddler.ai/sdk-api/langchain/set-llm-context.md): Set or clear additional context on a language model for inclusion in LLM spans.
+- [addSessionAttributes](https://docs.fiddler.ai/sdk-api/langgraph-js/add-session-attributes.md): addSessionAttributes
+- [CallbackManagerModule](https://docs.fiddler.ai/sdk-api/langgraph-js/callback-manager-module.md): Shape of the `@langchain/core/callbacks/manager` module export.
+- [extractTextContent](https://docs.fiddler.ai/sdk-api/langgraph-js/extract-text-content.md): extractTextContent
+- [FiddlerCallbackHandler](https://docs.fiddler.ai/sdk-api/langgraph-js/fiddler-callback-handler.md): LangChain callback handler that creates Fiddler OTel spans for every
+- [formatMessages](https://docs.fiddler.ai/sdk-api/langgraph-js/format-messages.md): formatMessages
+- [getConversationId](https://docs.fiddler.ai/sdk-api/langgraph-js/get-conversation-id.md): getConversationId
+- [getLlmContext](https://docs.fiddler.ai/sdk-api/langgraph-js/get-llm-context.md): getLlmContext
+- [getProviderFromModel](https://docs.fiddler.ai/sdk-api/langgraph-js/get-provider-from-model.md): getProviderFromModel
+- [getSessionAttributes](https://docs.fiddler.ai/sdk-api/langgraph-js/get-session-attributes.md): getSessionAttributes
+- [Introduction](https://docs.fiddler.ai/sdk-api/langgraph-js/index.md): Complete API reference for fiddler-langgraph-js
+- [LangGraphInstrumentor](https://docs.fiddler.ai/sdk-api/langgraph-js/lang-graph-instrumentor.md): Auto-instruments LangChain/LangGraph by monkey-patching
+- [runWithContext](https://docs.fiddler.ai/sdk-api/langgraph-js/run-with-context.md): runWithContext
+- [safeStringify](https://docs.fiddler.ai/sdk-api/langgraph-js/safe-stringify.md): safeStringify
+- [setConversationId](https://docs.fiddler.ai/sdk-api/langgraph-js/set-conversation-id.md): setConversationId
+- [setLlmContext](https://docs.fiddler.ai/sdk-api/langgraph-js/set-llm-context.md): setLlmContext
+- [truncate](https://docs.fiddler.ai/sdk-api/langgraph-js/truncate.md): truncate
+- [add_session_attributes](https://docs.fiddler.ai/sdk-api/langgraph/add-session-attributes.md): Add a session-level attribute that appears on all spans in the current context.
+- [add_span_attributes](https://docs.fiddler.ai/sdk-api/langgraph/add-span-attributes.md): Add custom span-level attributes to a specific LangChain component's metadata.
+- [clear_llm_context](https://docs.fiddler.ai/sdk-api/langgraph/clear-llm-context.md): Remove LLM context from a language model instance.
+- [FiddlerChain](https://docs.fiddler.ai/sdk-api/langgraph/fiddler-chain.md): Wrapper for chain/workflow spans with semantic convention helpers.
+- [FiddlerClient](https://docs.fiddler.ai/sdk-api/langgraph/fiddler-client.md): The main client for instrumenting Generative AI applications with Fiddler observability.
+- [FiddlerGeneration](https://docs.fiddler.ai/sdk-api/langgraph/fiddler-generation.md): Wrapper for LLM generation spans with semantic convention helpers.
+- [FiddlerSpan](https://docs.fiddler.ai/sdk-api/langgraph/fiddler-span.md): Wrapper around OpenTelemetry span with simplified helper methods.
+- [FiddlerTool](https://docs.fiddler.ai/sdk-api/langgraph/fiddler-tool.md): Wrapper for tool/function call spans with semantic convention helpers.
+- [get_client](https://docs.fiddler.ai/sdk-api/langgraph/get-client.md): Return the global FiddlerClient singleton (first created in this process).
+- [get_current_span](https://docs.fiddler.ai/sdk-api/langgraph/get-current-span.md): Get the currently active span as a Fiddler wrapper (inside a traced function).
+- [Introduction](https://docs.fiddler.ai/sdk-api/langgraph/index.md): Complete API reference for fiddler-langgraph
+- [LangGraphInstrumentor](https://docs.fiddler.ai/sdk-api/langgraph/lang-graph-instrumentor.md): An OpenTelemetry instrumentor for LangGraph applications.
+- [set_conversation_id](https://docs.fiddler.ai/sdk-api/langgraph/set-conversation-id.md): Set the conversation ID for the current execution context.
+- [set_llm_context](https://docs.fiddler.ai/sdk-api/langgraph/set-llm-context.md): Set or clear additional context information on a language model instance.
+- [trace](https://docs.fiddler.ai/sdk-api/langgraph/trace.md): Decorator for automatic function tracing with input/output capture.
+- [FiddlerAgentSpan](https://docs.fiddler.ai/sdk-api/otel-js/fiddler-agent-span.md): Span wrapper for agent/chain operations with agent identity helpers.
+- [FiddlerClient](https://docs.fiddler.ai/sdk-api/otel-js/fiddler-client.md): Primary entry point for Fiddler AI observability in JavaScript/TypeScript.
+- [FiddlerClientConfig](https://docs.fiddler.ai/sdk-api/otel-js/fiddler-client-config.md): Configuration for FiddlerClient.
+- [FiddlerGenerationSpan](https://docs.fiddler.ai/sdk-api/otel-js/fiddler-generation-span.md): Span wrapper for LLM generation calls with model, prompt, completion,
+- [FiddlerSpan](https://docs.fiddler.ai/sdk-api/otel-js/fiddler-span.md): Base wrapper around an OpenTelemetry Span with Fiddler-specific
+- [FiddlerToolSpan](https://docs.fiddler.ai/sdk-api/otel-js/fiddler-tool-span.md): Span wrapper for tool/function invocations with tool-specific attribute
+- [Introduction](https://docs.fiddler.ai/sdk-api/otel-js/index.md): Complete API reference for fiddler-otel-js
+- [SpanAttributes](https://docs.fiddler.ai/sdk-api/otel-js/span-attributes.md): Fiddler span attribute keys.
+- [SpanType](https://docs.fiddler.ai/sdk-api/otel-js/span-type.md): Allowed values for the `fiddler.span.type` attribute.
+- [StartSpanOptions](https://docs.fiddler.ai/sdk-api/otel-js/start-span-options.md): Options for creating a new span via FiddlerClient.startSpan.
+- [TokenUsage](https://docs.fiddler.ai/sdk-api/otel-js/token-usage.md): Token usage statistics for an LLM call.
+- [add_session_attributes](https://docs.fiddler.ai/sdk-api/otel/add-session-attributes.md): Add a session-level attribute that appears on all spans in the current context.
+- [FiddlerChain](https://docs.fiddler.ai/sdk-api/otel/fiddler-chain.md): Wrapper for chain/workflow spans with semantic convention helpers.
+- [FiddlerClient](https://docs.fiddler.ai/sdk-api/otel/fiddler-client.md): The main client for instrumenting Generative AI applications with Fiddler observability.
+- [FiddlerGeneration](https://docs.fiddler.ai/sdk-api/otel/fiddler-generation.md): Wrapper for LLM generation spans with semantic convention helpers.
+- [FiddlerResourceAttributes](https://docs.fiddler.ai/sdk-api/otel/fiddler-resource-attributes.md): Constants for Fiddler OpenTelemetry resource attributes.
+- [FiddlerSpan](https://docs.fiddler.ai/sdk-api/otel/fiddler-span.md): Wrapper around OpenTelemetry span with simplified helper methods.
+- [FiddlerSpanAttributes](https://docs.fiddler.ai/sdk-api/otel/fiddler-span-attributes.md): Constants for Fiddler OpenTelemetry span attributes.
+- [FiddlerSpanProcessor](https://docs.fiddler.ai/sdk-api/otel/fiddler-span-processor.md): Span processor that automatically propagates attributes from parent to child spans.
+- [FiddlerTool](https://docs.fiddler.ai/sdk-api/otel/fiddler-tool.md): Wrapper for tool/function call spans with semantic convention helpers.
+- [get_client](https://docs.fiddler.ai/sdk-api/otel/get-client.md): Return the global FiddlerClient singleton (first created in this process).
+- [get_current_span](https://docs.fiddler.ai/sdk-api/otel/get-current-span.md): Get the currently active span as a Fiddler wrapper (inside a traced function).
+- [Introduction](https://docs.fiddler.ai/sdk-api/otel/index.md): Complete API reference for fiddler-otel
+- [JSONLSpanExporter](https://docs.fiddler.ai/sdk-api/otel/jsonl-span-exporter.md): SpanExporter that captures spans using JSONLSpanCapture.
+- [set_conversation_id](https://docs.fiddler.ai/sdk-api/otel/set-conversation-id.md): Set the conversation ID for the current execution context.
+- [SpanType](https://docs.fiddler.ai/sdk-api/otel/span-type.md): Constants for Fiddler OpenTelemetry span types.
+- [trace](https://docs.fiddler.ai/sdk-api/otel/trace.md): Decorator for automatic function tracing with input/output capture.
+- [AlertCondition](https://docs.fiddler.ai/sdk-api/python-client/alert-condition.md): Alert trigger conditions for metric comparisons.
+- [AlertRecord](https://docs.fiddler.ai/sdk-api/python-client/alert-record.md): Alert record representing a triggered alert instance.
+- [AlertRule](https://docs.fiddler.ai/sdk-api/python-client/alert-rule.md): Alert rule for automated monitoring and alerting in ML systems.
+- [AlertThresholdAlgo](https://docs.fiddler.ai/sdk-api/python-client/alert-threshold-algo.md): Threshold determination algorithms for alert rules.
+- [ApiError](https://docs.fiddler.ai/sdk-api/python-client/api-error.md): Raised when the Fiddler API returns an HTTP error response.
+- [ArtifactStatus](https://docs.fiddler.ai/sdk-api/python-client/artifact-status.md): Model artifact upload and deployment status.
+- [ArtifactType](https://docs.fiddler.ai/sdk-api/python-client/artifact-type.md): Model artifact types for deployment.
+- [AsyncJobFailed](https://docs.fiddler.ai/sdk-api/python-client/async-job-failed.md): Raised when an asynchronous job fails to execute successfully.
+- [Baseline](https://docs.fiddler.ai/sdk-api/python-client/baseline.md): Baseline for drift detection and model performance monitoring.
+- [BaselineCompact](https://docs.fiddler.ai/sdk-api/python-client/baseline-compact.md): Fetch baseline instance
+- [BaselineType](https://docs.fiddler.ai/sdk-api/python-client/baseline-type.md): Baseline computation strategies for data drift detection in Fiddler.
+- [BinSize](https://docs.fiddler.ai/sdk-api/python-client/bin-size.md): Time bin sizes for alert rule aggregation.
+- [Column](https://docs.fiddler.ai/sdk-api/python-client/column.md): Represents a single column in a model schema with its metadata and constraints.
+- [CompareTo](https://docs.fiddler.ai/sdk-api/python-client/compare-to.md): Comparison baseline types for alert rule thresholds.
+- [Conflict](https://docs.fiddler.ai/sdk-api/python-client/conflict.md): Raised when a request conflicts with the current state of a resource (HTTP 409).
+- [ConnError](https://docs.fiddler.ai/sdk-api/python-client/conn-error.md): Raised when a connection error occurs during HTTP requests.
+- [ConnTimeout](https://docs.fiddler.ai/sdk-api/python-client/conn-timeout.md): Raised when a connection timeout occurs during HTTP requests.
+- [Connection](https://docs.fiddler.ai/sdk-api/python-client/connection.md): Manages authenticated connections to the Fiddler platform.
+- [ConnectionMixin](https://docs.fiddler.ai/sdk-api/python-client/connection-mixin.md): Mixin class providing connection-related functionality to other classes.
+- [create_columns_from_df](https://docs.fiddler.ai/sdk-api/python-client/create-columns-from-df.md): Helper function to create Columns from a pandas DataFrame column dtypes.
+- [CustomFeature](https://docs.fiddler.ai/sdk-api/python-client/custom-feature.md): Base class for all custom feature types in Fiddler models.
+- [CustomFeatureType](https://docs.fiddler.ai/sdk-api/python-client/custom-feature-type.md): Types of custom features for advanced model monitoring.
+- [CustomMetric](https://docs.fiddler.ai/sdk-api/python-client/custom-metric.md): Custom metric for monitoring business-specific and domain-specific KPIs.
+- [DataType](https://docs.fiddler.ai/sdk-api/python-client/data-type.md): Data types supported for model columns in Fiddler.
+- [Dataset](https://docs.fiddler.ai/sdk-api/python-client/dataset.md): Represents a dataset containing data published to a Fiddler model.
+- [DatasetCompact](https://docs.fiddler.ai/sdk-api/python-client/dataset-compact.md): Lightweight dataset representation for listing and basic operations.
+- [DatasetDataSource](https://docs.fiddler.ai/sdk-api/python-client/dataset-data-source.md): Data source for explainability analysis using a sample from a dataset.
+- [DeploymentParams](https://docs.fiddler.ai/sdk-api/python-client/deployment-params.md): Configuration parameters for deploying a model in the Fiddler platform.
+- [DeploymentType](https://docs.fiddler.ai/sdk-api/python-client/deployment-type.md): Model deployment types for explainability services.
+- [DownloadFormat](https://docs.fiddler.ai/sdk-api/python-client/download-format.md): File formats for downloading and exporting explanation data.
+- [Enrichment](https://docs.fiddler.ai/sdk-api/python-client/enrichment.md): Represents custom features derived from enrichment operations.
+- [EnvType](https://docs.fiddler.ai/sdk-api/python-client/env-type.md): Environment types for data publishing in Fiddler.
+- [EventIdDataSource](https://docs.fiddler.ai/sdk-api/python-client/event-id-data-source.md): Data source for explainability analysis using a specific event ID.
+- [ExplainMethod](https://docs.fiddler.ai/sdk-api/python-client/explain-method.md): Explanation methods for model interpretability and feature importance analysis.
+- [File](https://docs.fiddler.ai/sdk-api/python-client/file.md): Construct a files instance.
+- [group_by](https://docs.fiddler.ai/sdk-api/python-client/group-by.md): Group the events by a column. Use this method to form the grouped data for ranking models.
+- [HttpError](https://docs.fiddler.ai/sdk-api/python-client/http-error.md): Base class for all HTTP-related errors.
+- [ImageEmbedding](https://docs.fiddler.ai/sdk-api/python-client/image-embedding.md): Represents custom features derived from image embeddings for visual content analysis.
+- [IncompatibleClient](https://docs.fiddler.ai/sdk-api/python-client/incompatible-client.md): Raised when the Python client version is incompatible with the Fiddler platform version.
+- [Introduction](https://docs.fiddler.ai/sdk-api/python-client/index.md): Complete API reference for fiddler
+- [Job](https://docs.fiddler.ai/sdk-api/python-client/job.md): Represents an asynchronous operation in the Fiddler platform.
+- [JobStatus](https://docs.fiddler.ai/sdk-api/python-client/job-status.md): Status values for asynchronous job operations in Fiddler.
+- [Model](https://docs.fiddler.ai/sdk-api/python-client/model.md): Represents a machine learning model in the Fiddler platform.
+- [ModelCompact](https://docs.fiddler.ai/sdk-api/python-client/model-compact.md): Lightweight model representation for listing and basic operations.
+- [ModelDeployment](https://docs.fiddler.ai/sdk-api/python-client/model-deployment.md): Model deployment management for serving infrastructure.
+- [ModelInputType](https://docs.fiddler.ai/sdk-api/python-client/model-input-type.md): Input data types supported by Fiddler models.
+- [ModelSchema](https://docs.fiddler.ai/sdk-api/python-client/model-schema.md): Defines the complete schema structure for a model's input data.
+- [ModelSpec](https://docs.fiddler.ai/sdk-api/python-client/model-spec.md): Defines how model columns are categorized and used along with model task configuration.
+- [ModelTask](https://docs.fiddler.ai/sdk-api/python-client/model-task.md): Machine learning task types supported by Fiddler.
+- [ModelTaskParams](https://docs.fiddler.ai/sdk-api/python-client/model-task-params.md): Configuration parameters for different model task types and evaluation metrics.
+- [Multivariate](https://docs.fiddler.ai/sdk-api/python-client/multivariate.md): Represents custom features derived from multiple columns using clustering analysis.
+- [NotFound](https://docs.fiddler.ai/sdk-api/python-client/not-found.md): Raised when a requested resource is not found (HTTP 404).
+- [Priority](https://docs.fiddler.ai/sdk-api/python-client/priority.md): Alert priority levels for notification routing and escalation.
+- [Project](https://docs.fiddler.ai/sdk-api/python-client/project.md): Represents a project container for organizing ML models and resources.
+- [ProjectCompact](https://docs.fiddler.ai/sdk-api/python-client/project-compact.md): Lightweight project representation for listing and basic operations.
+- [RowDataSource](https://docs.fiddler.ai/sdk-api/python-client/row-data-source.md): Data source for explainability analysis using a single row of data.
+- [Segment](https://docs.fiddler.ai/sdk-api/python-client/segment.md): Data segment for targeted monitoring and cohort analysis.
+- [TextEmbedding](https://docs.fiddler.ai/sdk-api/python-client/text-embedding.md): Represents custom features derived from text embeddings with TF-IDF analysis.
+- [Unsupported](https://docs.fiddler.ai/sdk-api/python-client/unsupported.md): Raised when an unsupported operation is attempted.
+- [VectorFeature](https://docs.fiddler.ai/sdk-api/python-client/vector-feature.md): Represents custom features derived from a single vector column using clustering analysis.
+- [Webhook](https://docs.fiddler.ai/sdk-api/python-client/webhook.md): Webhook for integrating external notification systems with Fiddler alerts.
+- [WindowBinSize](https://docs.fiddler.ai/sdk-api/python-client/window-bin-size.md): Time granularities for rolling baseline window aggregation.
+- [XaiParams](https://docs.fiddler.ai/sdk-api/python-client/xai-params.md): Configuration parameters for explainability (XAI) analysis in Fiddler models.
+- [Creates Alert Rules](https://docs.fiddler.ai/sdk-api/rest-api/alert-rules/create-alert.md): Creates Alert Rules
+- [createNotificationForAlertRule](https://docs.fiddler.ai/sdk-api/rest-api/alert-rules/create-notification-for-alert-rule.md): Create Notification for an Alert Rule
+- [Deletes an Alert Rule](https://docs.fiddler.ai/sdk-api/rest-api/alert-rules/delete-alert-rule.md): Deletes an Alert Rule
+- [List latest alert record for each time bucket during specified time_bucket_start and time_bucket_end for the given alert rule](https://docs.fiddler.ai/sdk-api/rest-api/alert-rules/get-alert-record-history.md): List latest alert record for each time bucket during specified time_bucket_start and time_bucket_end for the given alert rule
+- [Returns Alert Rule for the given id](https://docs.fiddler.ai/sdk-api/rest-api/alert-rules/get-alert-rule.md): Returns Alert Rule for the given id
+- [List of all alert records during specified time_bucket_start and time_bucket_end for the given alert rule](https://docs.fiddler.ai/sdk-api/rest-api/alert-rules/get-alert-rule-records.md): List of all alert records during specified time_bucket_start and time_bucket_end for the given alert rule
+- [Lists all alert rules configured for a model.](https://docs.fiddler.ai/sdk-api/rest-api/alert-rules/get-alert-rules.md): Lists all alert rules configured for a model.
+- [List of all alert rule summary in the given time_bucket_start and time_bucket_end](https://docs.fiddler.ai/sdk-api/rest-api/alert-rules/get-alert-rules-summary.md): List of all alert rule summary in the given time_bucket_start and time_bucket_end
+- [Get thresholds that were used to evaluate the given time bin using the given alert rule.](https://docs.fiddler.ai/sdk-api/rest-api/alert-rules/get-alert-thresholds-for-time-bin.md): Get thresholds that were used to evaluate the given time bin using the given alert rule.
+- [Returns notification for the given Alert Rule id](https://docs.fiddler.ai/sdk-api/rest-api/alert-rules/get-notification-for-alert-rule.md): Returns notification for the given Alert Rule id
+- [Alert Rules REST API Guide](https://docs.fiddler.ai/sdk-api/rest-api/alert-rules/index.md): Discover Fiddler’s Alert Rules REST API guide. Learn to list alerts by time, create alert rules, send notifications for alerts, and more.
+- [Send a test notification for the given Alert Rule](https://docs.fiddler.ai/sdk-api/rest-api/alert-rules/test-notification-for-alert-rule.md): Send a test notification for the given Alert Rule to verify notification configuration
+- [Update by id](https://docs.fiddler.ai/sdk-api/rest-api/alert-rules/update-alert-rule.md): Update Alert Rule by id
+- [Update by id](https://docs.fiddler.ai/sdk-api/rest-api/alert-rules/update-notification-for-alert-rule.md): Update Notification by Alert Rule id
+- [Create New Application](https://docs.fiddler.ai/sdk-api/rest-api/applications/create-application.md): Create New Application
+- [Delete Application](https://docs.fiddler.ai/sdk-api/rest-api/applications/delete-application.md): Delete application and all associated resources asynchronously
+- [Get Application](https://docs.fiddler.ai/sdk-api/rest-api/applications/get-application.md): Get application by ID
+- [Get Application Metrics Metadata](https://docs.fiddler.ai/sdk-api/rest-api/applications/get-application-metrics.md): Retrieves available metrics and aggregations for a GenAI application
+- [List applications](https://docs.fiddler.ai/sdk-api/rest-api/applications/get-applications.md): Get list of applications in a project for provided query and filters
+- [Applications](https://docs.fiddler.ai/sdk-api/rest-api/applications/index.md): REST API endpoints for managing applications in Fiddler Platform.
+- [List catalog entries](https://docs.fiddler.ai/sdk-api/rest-api/applications/list-catalog.md): Paginated, searchable list of entity names for an application. Returns entity names with semantic concept mappings, data types, first/last seen timest…
+- [List distinct values for a catalog entity](https://docs.fiddler.ai/sdk-api/rest-api/applications/list-catalog-values.md): Paginated, searchable list of distinct values for a specific entity within an application. Useful for populating filter dropdowns in the Trace Explore…
+- [List attributes](https://docs.fiddler.ai/sdk-api/rest-api/attributes/get-attributes.md): Get list of attributes
+- [Attributes](https://docs.fiddler.ai/sdk-api/rest-api/attributes/index.md): REST API endpoints for managing attributes in Fiddler Platform.
+- [add baseline to a model](https://docs.fiddler.ai/sdk-api/rest-api/baseline/add-baseline.md): Adds a baseline to a model
+- [Delete baseline from a model](https://docs.fiddler.ai/sdk-api/rest-api/baseline/delete-baseline.md): Delete baseline from a model
+- [Get baseline details](https://docs.fiddler.ai/sdk-api/rest-api/baseline/get-baseline.md): Get baseline details
+- [List of baselines based on user permissions and filters](https://docs.fiddler.ai/sdk-api/rest-api/baseline/get-baselines.md): List of baselines based on user permissions and filters
+- [List of baselines of a model](https://docs.fiddler.ai/sdk-api/rest-api/baseline/get-model-baselines.md): List of baselines of a model
+- [Baselines REST API Guide](https://docs.fiddler.ai/sdk-api/rest-api/baseline/index.md): Discover Fiddler’s Baseline feature. Learn how to add, retrieve, delete, and list baselines for a model based on user permissions and filters.
+- [Create new custom metric](https://docs.fiddler.ai/sdk-api/rest-api/custom-metrics/create-custom-metric.md): Create new custom metric
+- [Delete custom metric by uuid](https://docs.fiddler.ai/sdk-api/rest-api/custom-metrics/delete-custom-metric.md): Delete custom metric by uuid
+- [Detail info of a custom metric](https://docs.fiddler.ai/sdk-api/rest-api/custom-metrics/get-custom-metric.md): Detail info of a custom metric
+- [List all custom metrics](https://docs.fiddler.ai/sdk-api/rest-api/custom-metrics/get-custom-metrics.md): List all custom metrics
+- [List all custom metrics for a model](https://docs.fiddler.ai/sdk-api/rest-api/custom-metrics/get-model-custom-metrics.md): List all custom metrics for a model
+- [Custom Metrics REST API Guide](https://docs.fiddler.ai/sdk-api/rest-api/custom-metrics/index.md): Discover Fiddler’s Custom Metric feature. Learn how to add, retrieve, and delete custom metrics from you Fiddler models.
+- [Get environment of a model](https://docs.fiddler.ai/sdk-api/rest-api/environment/get-environment.md): Retrieve details of a specific environment associated with a model.
+- [List Environments](https://docs.fiddler.ai/sdk-api/rest-api/environment/get-environments.md): Retrieve a list of environments from authorized projects.
+- [List of environments of a model](https://docs.fiddler.ai/sdk-api/rest-api/environment/get-model-environments.md): Retrieve a list of environments associated with a specific model.
+- [Environments REST API Guide](https://docs.fiddler.ai/sdk-api/rest-api/environment/index.md): Learn about Fiddler’s environments API . Learn how to list pre-production and production environment datasets.
+- [Add new Evals dataset items](https://docs.fiddler.ai/sdk-api/rest-api/evals/add-evals-dataset-items.md)
+- [Bulk add spans to dataset](https://docs.fiddler.ai/sdk-api/rest-api/evals/bulk-add-spans-to-dataset.md): Accept a list of explicit span references and a field mapping, fetch span attributes from ClickHouse, apply the mapping server-side, and write one dat…
+- [Create an Evals dataset](https://docs.fiddler.ai/sdk-api/rest-api/evals/create-evals-dataset.md)
+- [Delete a dataset](https://docs.fiddler.ai/sdk-api/rest-api/evals/delete-evals-dataset.md)
+- [Get a dataset by id](https://docs.fiddler.ai/sdk-api/rest-api/evals/get-evals-dataset-by-id.md)
+- [List dataset items](https://docs.fiddler.ai/sdk-api/rest-api/evals/get-evals-dataset-items.md): Get list of items for a dataset
+- [Get dataset schema](https://docs.fiddler.ai/sdk-api/rest-api/evals/get-evals-dataset-schema.md): Discover what field keys exist in each JSON bucket (inputs, expected_outputs, metadata, extras) across this dataset's items, along with a coverage cou…
+- [Evals](https://docs.fiddler.ai/sdk-api/rest-api/evals/index.md): REST API endpoints for managing evals in Fiddler Platform.
+- [List Evals datasets](https://docs.fiddler.ai/sdk-api/rest-api/evals/list-evals-datasets.md): Retrieve datasets with pagination, search, ordering, and filters.
+- [Update a dataset](https://docs.fiddler.ai/sdk-api/rest-api/evals/update-evals-dataset.md)
+- [Evaluation](https://docs.fiddler.ai/sdk-api/rest-api/evaluation/index.md): REST API endpoints for managing evaluation in Fiddler Platform.
+- [Score inputs using an evaluator](https://docs.fiddler.ai/sdk-api/rest-api/evaluation/score-inputs.md): Score inputs using an evaluator
+- [Create New Evaluator Rule](https://docs.fiddler.ai/sdk-api/rest-api/evaluator-rules/create-evaluator-rule.md): Create a new Evaluator Rule
+- [Delete Rule Evaluator for an application](https://docs.fiddler.ai/sdk-api/rest-api/evaluator-rules/delete-rule-evaluator.md): Delete Rule Evaluator
+- [List evaluator backfills](https://docs.fiddler.ai/sdk-api/rest-api/evaluator-rules/get-evaluator-backfills.md): Get list of evaluator backfill jobs for provided query and filters
+- [List Rule evaluators](https://docs.fiddler.ai/sdk-api/rest-api/evaluator-rules/get-rule-evaluators.md): Get list of Rule evaluators setup for provided query and filters
+- [Evaluator Rules REST API Guide](https://docs.fiddler.ai/sdk-api/rest-api/evaluator-rules/index.md): Discover Fiddler’s Evaluator Rules REST API guide. Learn to list and create evaluator rules, update or delete a rule, map input keys, and list evaluat…
+- [Get attribute names and input fields](https://docs.fiddler.ai/sdk-api/rest-api/evaluator-rules/map-input-keys-rule-evaluator.md): Get the possible attribute names detected in the application and the input fields with data type to fill out for the evaluator name
+- [Update Rule Evaluator](https://docs.fiddler.ai/sdk-api/rest-api/evaluator-rules/update-rule-evaluator.md): Update the Rule evaluator
+- [Archive Evaluator](https://docs.fiddler.ai/sdk-api/rest-api/evaluators/archive-evaluator.md): Archive an evaluator. Sets the evaluator's status to ARCHIVED. Archived evaluators are excluded from active queries and cannot be used in new evaluato…
+- [Create New Evaluator](https://docs.fiddler.ai/sdk-api/rest-api/evaluators/create-evaluator.md): Create a new Evaluator
+- [Get Evaluator by ID](https://docs.fiddler.ai/sdk-api/rest-api/evaluators/get-evaluator.md): Get details of a specific evaluator by its ID
+- [List evaluator config schemas](https://docs.fiddler.ai/sdk-api/rest-api/evaluators/get-evaluator-config-schemas.md): Get list of evaluator config schema for each enrichment type with data type
+- [List evaluators](https://docs.fiddler.ai/sdk-api/rest-api/evaluators/get-evaluators.md): Get list of evaluators for provided query and filters
+- [Evaluators REST API Guide](https://docs.fiddler.ai/sdk-api/rest-api/evaluators/index.md): Discover Fiddler’s Evaluators REST API guide. Learn to list and create evaluators, get an evaluator by ID, update or archive evaluators, and fetch eva…
+- [Update Evaluator](https://docs.fiddler.ai/sdk-api/rest-api/evaluators/update-evaluator.md): Update an evaluator's name and/or configuration. Creates a new version of the evaluator and archives the previous version. At least one field (name or…
+- [Delete events in Fiddler Platform](https://docs.fiddler.ai/sdk-api/rest-api/events/delete-events.md): Delete events in Fiddler Platform
+- [Events](https://docs.fiddler.ai/sdk-api/rest-api/events/index.md): REST API endpoints for managing events in Fiddler Platform.
+- [Publish events to Fiddler Platform](https://docs.fiddler.ai/sdk-api/rest-api/events/publish-events.md): Publish events to Fiddler Platform
+- [Publish update events to Fiddler Platform](https://docs.fiddler.ai/sdk-api/rest-api/events/publish-events-update.md): Publish update events to Fiddler Platform
+- [Create New Experiment](https://docs.fiddler.ai/sdk-api/rest-api/experiments/create-experiment.md): Create a new experiment
+- [Delete Experiment](https://docs.fiddler.ai/sdk-api/rest-api/experiments/delete-experiment.md): Delete an experiment
+- [getEvalScores](https://docs.fiddler.ai/sdk-api/rest-api/experiments/get-eval-scores.md): Get list of evaluation scores for an experiment
+- [Get Experiment](https://docs.fiddler.ai/sdk-api/rest-api/experiments/get-experiment.md): Get experiment by ID
+- [Get Experiment Metrics](https://docs.fiddler.ai/sdk-api/rest-api/experiments/get-experiment-metrics.md): Get per-evaluator aggregate metrics for an experiment. Auto-detects each evaluator's chart type based on score cardinality: numeric_range (>10 distinc…
+- [Get Experiment Row Metrics](https://docs.fiddler.ai/sdk-api/rest-api/experiments/get-experiment-metrics-rows.md): Get top and bottom performing rows via percentile-based outlier detection. Numeric evaluators use P10/P90 thresholds; categorical evaluators flag labe…
+- [List experiment results](https://docs.fiddler.ai/sdk-api/rest-api/experiments/get-experiment-results.md): Get a paginated list of results for an experiment. Each result contains the experiment item outputs, dataset inputs and expected outputs, and all asso…
+- [List experiments](https://docs.fiddler.ai/sdk-api/rest-api/experiments/get-experiments.md): Get list of experiments for provided query and filters
+- [Experiments](https://docs.fiddler.ai/sdk-api/rest-api/experiments/index.md): REST API endpoints for managing experiments in Fiddler Platform.
+- [Update Experiment](https://docs.fiddler.ai/sdk-api/rest-api/experiments/update-experiment.md): Update an experiment
+- [Upload new experiment items](https://docs.fiddler.ai/sdk-api/rest-api/experiments/upload-experiment-items.md): Upload new experiment items
+- [Upload experiment results](https://docs.fiddler.ai/sdk-api/rest-api/experiments/upload-experiment-results.md): Upload new experiment results, each with an item and its associated scores.
+- [Complete multi-part upload](https://docs.fiddler.ai/sdk-api/rest-api/file-upload/complete-multi-part-upload.md): Completes the multi-part upload process for a large file in Fiddler.
+- [Upload file in a single part](https://docs.fiddler.ai/sdk-api/rest-api/file-upload/file-upload.md): Uploads a file in a single part to Fiddler.
+- [File Upload REST API Guide](https://docs.fiddler.ai/sdk-api/rest-api/file-upload/index.md): Explore API integration with Fiddler’s platform. Learn about file uploads, from single-part to multi-part options, and optimize your workflow effortle…
+- [Initiate multi-part upload](https://docs.fiddler.ai/sdk-api/rest-api/file-upload/initiate-multi-part-upload.md): Initiates a multi-part upload process for a large file to Fiddler.
+- [Upload file a part of the file](https://docs.fiddler.ai/sdk-api/rest-api/file-upload/upload-part.md): Uploads a part of a large file to Fiddler as part of a multi-part upload process.
+- [FQL Expressions](https://docs.fiddler.ai/sdk-api/rest-api/fql-expressions/index.md): REST API endpoints for managing fql expressions in Fiddler Platform.
+- [List available FQL functions](https://docs.fiddler.ai/sdk-api/rest-api/fql-expressions/list-fql-expressions.md): Returns the list of FQL functions available for GenAI custom metrics, including function metadata, parameter definitions, and return types. The respon…
+- [Create GenAI Alert Rule](https://docs.fiddler.ai/sdk-api/rest-api/genai-alert-rules/create-gen-ai-alert-rule.md): Creates a new GenAI Alert Rule
+- [Deletes a GenAI Alert Rule](https://docs.fiddler.ai/sdk-api/rest-api/genai-alert-rules/delete-gen-ai-alert-rule.md): Deletes a GenAI Alert Rule
+- [Get GenAI Alert Rule](https://docs.fiddler.ai/sdk-api/rest-api/genai-alert-rules/get-gen-ai-alert-rule.md): Retrieves a specific GenAI Alert Rule by its ID
+- [GenAI Alert Rules](https://docs.fiddler.ai/sdk-api/rest-api/genai-alert-rules/index.md): REST API endpoints for managing genai alert rules in Fiddler Platform.
+- [List GenAI Alert Rules](https://docs.fiddler.ai/sdk-api/rest-api/genai-alert-rules/list-gen-ai-alert-rules.md): Lists all GenAI Alert Rules with pagination
+- [Send Test Notification](https://docs.fiddler.ai/sdk-api/rest-api/genai-alert-rules/test-gen-ai-alert-rule-notification.md): Sends a test notification for a GenAI Alert Rule using the configured notification settings. The notification uses the actual alert email template wit…
+- [REST API](https://docs.fiddler.ai/sdk-api/rest-api/index.md): Reference for the Fiddler REST API. Every operation in the public OpenAPI specification is documented here, grouped by resource.
+- [Get async job details for a job id](https://docs.fiddler.ai/sdk-api/rest-api/jobs/get-job.md): Get async job details for a job id
+- [Get details of all background/async jobs](https://docs.fiddler.ai/sdk-api/rest-api/jobs/get-jobs.md): Get details of all background/async jobs
+- [Jobs REST API Guide](https://docs.fiddler.ai/sdk-api/rest-api/jobs/index.md): Learn how to create requests and responses to retrieve async job details by job ID and view all background/async jobs with the Fiddler Platform.
+- [Create new LLM provider](https://docs.fiddler.ai/sdk-api/rest-api/llm-gateway/create-llm-provider.md): Create a new LLM provider with credentials and models
+- [Delete LLM provider](https://docs.fiddler.ai/sdk-api/rest-api/llm-gateway/delete-llm-provider.md): Delete an LLM provider by name
+- [Get available provider options](https://docs.fiddler.ai/sdk-api/rest-api/llm-gateway/get-llm-provider-options.md): Get available models for each supported LLM provider
+- [List LLM providers](https://docs.fiddler.ai/sdk-api/rest-api/llm-gateway/get-llm-providers.md): Get list of LLM providers with pagination support
+- [LLM Gateway](https://docs.fiddler.ai/sdk-api/rest-api/llm-gateway/index.md): REST API endpoints for managing llm gateway in Fiddler Platform.
+- [Test LLM connection](https://docs.fiddler.ai/sdk-api/rest-api/llm-gateway/test-llm-connection.md): Test that a registered model + credential combination works by sending a minimal LLM completion call. Returns HTTP `200` with success/failure for LLM-…
+- [Update LLM provider](https://docs.fiddler.ai/sdk-api/rest-api/llm-gateway/update-llm-provider.md): Update an existing LLM provider's models and credentials. This is a replace operation - pass the complete desired state. For credentials: include exis…
+- [Add a new model under a project](https://docs.fiddler.ai/sdk-api/rest-api/model/add-model.md): Add a new model under a project
+- [Delete a model](https://docs.fiddler.ai/sdk-api/rest-api/model/delete-model.md): Delete a model
+- [Upload artifacts associated with the model](https://docs.fiddler.ai/sdk-api/rest-api/model/deploy-model-artifact.md): Upload artifacts associated with the model
+- [Update artifacts associated with the model](https://docs.fiddler.ai/sdk-api/rest-api/model/deploy-model-artifact-update.md): Update artifacts associated with the model
+- [Deploy a surrogate model](https://docs.fiddler.ai/sdk-api/rest-api/model/deploy-surrogate.md): Deploy a surrogate model
+- [Update a surrogate model](https://docs.fiddler.ai/sdk-api/rest-api/model/deploy-surrogate-update.md): Update a surrogate model
+- [Get details of a model](https://docs.fiddler.ai/sdk-api/rest-api/model/get-model.md): Details of a model for given model id
+- [Details of all columns](https://docs.fiddler.ai/sdk-api/rest-api/model/get-model-all-columns.md): Details of all columns for a model
+- [getModelColumnV3](https://docs.fiddler.ai/sdk-api/rest-api/model/get-model-column.md): Details of a specific column for a model
+- [List models](https://docs.fiddler.ai/sdk-api/rest-api/model/get-models.md): Get list of model for provided query and filters
+- [Model REST API Guide](https://docs.fiddler.ai/sdk-api/rest-api/model/index.md): Dive into our guide to the Model REST API. Learn to list models, add models to a project, get details, update fields, generate models from samples, an…
+- [Generate model from the given data sample](https://docs.fiddler.ai/sdk-api/rest-api/model/model-factory.md): Generate model from the given data sample
+- [Update the fields of a model](https://docs.fiddler.ai/sdk-api/rest-api/model/update-model.md): Update the fields of a model.
+- [Create new project](https://docs.fiddler.ai/sdk-api/rest-api/projects/create-project.md): Create new project
+- [Delete project by id](https://docs.fiddler.ai/sdk-api/rest-api/projects/delete-project.md): Delete project by id
+- [Detail info of a project for the specified project id](https://docs.fiddler.ai/sdk-api/rest-api/projects/get-project.md): Detail info of a project
+- [List of projects](https://docs.fiddler.ai/sdk-api/rest-api/projects/get-projects.md): List of projects
+- [Projects REST API Guide](https://docs.fiddler.ai/sdk-api/rest-api/projects/index.md): Learn about REST API projects on the Fiddler platform. Explore how to list projects, create a new project, and get detailed info for a specified proje…
+- [API to fetch metrics used to plot monitoring charts](https://docs.fiddler.ai/sdk-api/rest-api/queries/get-queries.md): API to fetch metrics used to plot monitoring charts
+- [Queries](https://docs.fiddler.ai/sdk-api/rest-api/queries/index.md): REST API endpoints for managing queries in Fiddler Platform.
+- [Bulk create scores](https://docs.fiddler.ai/sdk-api/rest-api/scores/bulk-create-scores.md): Create up to 100 scores in a single request. Per-item validation errors are collected and returned; valid items are committed together in a single bat…
+- [Create a score](https://docs.fiddler.ai/sdk-api/rest-api/scores/create-score.md): Create a new score or annotation. Evaluator scores are read-only through this API — only human, LLM, and code sources are accepted. Returns 201 on suc…
+- [Delete a score](https://docs.fiddler.ai/sdk-api/rest-api/scores/delete-score.md): Delete a score by ID. Returns 204 No Content on success. Idempotent — returns 204 even if the score does not exist. Returns 403 if source is evaluator.
+- [Get a single score](https://docs.fiddler.ai/sdk-api/rest-api/scores/get-score.md): Retrieve a single score by its ID.
+- [Scores](https://docs.fiddler.ai/sdk-api/rest-api/scores/index.md): REST API endpoints for managing scores in Fiddler Platform.
+- [List scores](https://docs.fiddler.ai/sdk-api/rest-api/scores/list-scores.md): List scores with optional filters. Supports filtering by target (span, trace, session), score name, source, level, type, annotator, config name, and t…
+- [Update a score](https://docs.fiddler.ai/sdk-api/rest-api/scores/update-score.md): Partially update a score. Only value fields (value, label, text, reasoning, metadata) can be updated. Identity and structural fields (name, score_type…
+- [Create new segment](https://docs.fiddler.ai/sdk-api/rest-api/segments/create-segment.md): Create new segment
+- [Delete segment by uuid](https://docs.fiddler.ai/sdk-api/rest-api/segments/delete-segment.md): Delete segment by uuid
+- [List all segments for a model](https://docs.fiddler.ai/sdk-api/rest-api/segments/get-model-segments.md): List all segments for a model
+- [Detail info of a segment](https://docs.fiddler.ai/sdk-api/rest-api/segments/get-segment.md): Detail info of a segment
+- [List all segments](https://docs.fiddler.ai/sdk-api/rest-api/segments/get-segments.md): List all segments
+- [Segments REST API Guide](https://docs.fiddler.ai/sdk-api/rest-api/segments/index.md): Discover Fiddler’s Segments REST API guide. Learn to list, create, view details, delete segments by UUID, and list all segments for a model.
+- [Get server info](https://docs.fiddler.ai/sdk-api/rest-api/server-info/get-server-info.md): Get detailed information about the Fiddler server.
+- [Server Info REST API Guide](https://docs.fiddler.ai/sdk-api/rest-api/server-info/index.md): Learn API guidelines for retrieving server info with Fiddler’s platform. Discover how to create requests, receive responses, and maximize our solution…
+- [Delete Sessions](https://docs.fiddler.ai/sdk-api/rest-api/sessions/delete-sessions.md): Delete one or more sessions and all associated data (spans, attributes, evaluator scores, and span content) from the application. This operation is id…
+- [Sessions](https://docs.fiddler.ai/sdk-api/rest-api/sessions/index.md): REST API endpoints for managing sessions in Fiddler Platform.
+- [Get span field coverage](https://docs.fiddler.ai/sdk-api/rest-api/spans/get-span-fields.md): Given a filter over spans, return the union of span attribute keys and evaluator outputs that appear in the matching spans, along with a coverage coun…
+- [Spans](https://docs.fiddler.ai/sdk-api/rest-api/spans/index.md): REST API endpoints for managing spans in Fiddler Platform.
+- [Query spans](https://docs.fiddler.ai/sdk-api/rest-api/spans/query-spans.md): Search, filter, and paginate through spans with advanced criteria
+- [Delete Traces](https://docs.fiddler.ai/sdk-api/rest-api/traces/delete-traces.md): Delete one or more traces and all associated data (spans, attributes, evaluator scores, and span content) from the application. This operation is idem…
+- [Traces](https://docs.fiddler.ai/sdk-api/rest-api/traces/index.md): REST API endpoints for managing traces in Fiddler Platform.
+- [Create a new API key.](https://docs.fiddler.ai/sdk-api/rest-api/user-access-keys/create-user-access-key.md): Create a new API key for the authenticated user. Requires a unique name per user per organization. The full composite API key (key_id.secret) is retur…
+- [Delete an API key.](https://docs.fiddler.ai/sdk-api/rest-api/user-access-keys/delete-user-access-key.md): Delete an API key. The API key is permanently removed and can no longer be used for authentication.
+- [Get a single API key.](https://docs.fiddler.ai/sdk-api/rest-api/user-access-keys/get-user-access-key.md): Get metadata for a single API key owned by the authenticated user. Returns `404` if the API key is not found or belongs to another user.
+- [User Access Keys REST API Guide](https://docs.fiddler.ai/sdk-api/rest-api/user-access-keys/index.md): Manage Fiddler API keys with the User Access Keys REST API guide. Learn to list, create, retrieve, update, and delete the access keys that authenticat…
+- [List the caller's API keys.](https://docs.fiddler.ai/sdk-api/rest-api/user-access-keys/list-user-access-keys.md): List the authenticated user's API keys. Returns API key metadata only — secrets and hashes are never returned. Results are paginated.
+- [Update an API key.](https://docs.fiddler.ai/sdk-api/rest-api/user-access-keys/update-user-access-key.md): Update an API key's mutable fields. Supports updating the API key name and expiration. The new expires_at must be a future timestamp (greater than cur…
+- [This API is used to get identity and access related information of a user. It also provides details into the last successful login of the user.](https://docs.fiddler.ai/sdk-api/rest-api/users/get-users.md): List users
+- [Users](https://docs.fiddler.ai/sdk-api/rest-api/users/index.md): REST API endpoints for managing users in Fiddler Platform.
+- [clear_llm_context](https://docs.fiddler.ai/sdk-api/strands/clear-llm-context.md): Remove any previously set LLM context from a Model instance.
+- [FiddlerInstrumentationHook](https://docs.fiddler.ai/sdk-api/strands/fiddler-instrumentation-hook.md): Centralized instrumentation hook for Strands agents with Fiddler integration.
+- [FiddlerSpanProcessor](https://docs.fiddler.ai/sdk-api/strands/fiddler-span-processor.md): Backwards-compatible alias for StrandsSpanProcessor.
+- [get_conversation_id](https://docs.fiddler.ai/sdk-api/strands/get-conversation-id.md): Get the conversation ID for the current agent invocation.
+- [get_llm_context](https://docs.fiddler.ai/sdk-api/strands/get-llm-context.md): Get the LLM context for the current model.
+- [get_session_attributes](https://docs.fiddler.ai/sdk-api/strands/get-session-attributes.md): Get the session attributes for the current agent invocation.
+- [get_span_attributes](https://docs.fiddler.ai/sdk-api/strands/get-span-attributes.md): Get span attributes from a Model or AgentTool object.
+- [Introduction](https://docs.fiddler.ai/sdk-api/strands/index.md): Complete API reference for fiddler-strandsagents
+- [set_conversation_id](https://docs.fiddler.ai/sdk-api/strands/set-conversation-id.md): Set the conversation ID for the current agent invocation.
+- [set_llm_context](https://docs.fiddler.ai/sdk-api/strands/set-llm-context.md): Set or clear additional context information for LLM interactions.
+- [set_session_attributes](https://docs.fiddler.ai/sdk-api/strands/set-session-attributes.md): Add Fiddler-specific session attributes to an agent's metadata.
+- [set_span_attributes](https://docs.fiddler.ai/sdk-api/strands/set-span-attributes.md): Set custom attributes on a Model or AgentTool that can be accessed by logging hooks.
+- [StrandsAgentInstrumentor](https://docs.fiddler.ai/sdk-api/strands/strands-agent-instrumentor.md): OpenTelemetry instrumentor for Strands AI agents.
+- [StrandsSpanProcessor](https://docs.fiddler.ai/sdk-api/strands/strands-span-processor.md): Propagates parent attributes via `CoreFiddlerSpanProcessor` plus Strands-specific behavior.
+
+## OpenAPI Specs
+
+- [api_v3_ext](https://docs.fiddler.ai/openapi/api_v3_ext.yaml)
