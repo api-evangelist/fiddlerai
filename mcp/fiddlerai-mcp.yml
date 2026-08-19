@@ -2,10 +2,8 @@ generated: '2026-07-19'
 method: searched
 status: published
 source: https://docs.fiddler.ai/integrations/agentic-ai-and-llm-frameworks/agentic-ai/mcp-server
-notes: >-
-  Fiddler ships a first-party remote MCP server exposing GenAI observability data
-  to MCP-compatible clients. Deployment-hosted (per-tenant Fiddler URL). Private
-  preview at time of capture; APIs may change.
+notes: Fiddler ships a first-party remote MCP server exposing GenAI observability data to MCP-compatible
+  clients. Deployment-hosted (per-tenant Fiddler URL). Private preview at time of capture; APIs may change.
 server:
   name: fiddler-genai
   transport: http
@@ -17,27 +15,33 @@ server:
     header: 'Authorization: Bearer <FIDDLER_API_KEY>'
     env: FIDDLER_API_KEY
   rate_limit: 120 requests/minute per API key
-  client_bridge: 'npx -y mcp-remote https://<your-fiddler-url>/v1/mcp/genai/ --header "Authorization: Bearer <key>"'
+  client_bridge: 'npx -y mcp-remote https://<your-fiddler-url>/v1/mcp/genai/ --header "Authorization:
+    Bearer <key>"'
 tool_groups:
-  - name: genai
-    access: read-only
-    domains:
-      - projects
-      - applications
-      - evaluators
-      - rules
-      - traces
-      - sessions
-      - spans
-      - charts
-      - dashboards
-      - alerts
-      - metrics
-      - llm-gateway
-      - experiments
-      - attributes
-      - annotations
-      - backfills
-  - name: genai-experimental
-    access: read-write
-    note: Create/update/delete across the same domains; requires separate administrator enablement.
+- name: genai
+  access: read-only
+  domains:
+  - projects
+  - applications
+  - evaluators
+  - rules
+  - traces
+  - sessions
+  - spans
+  - charts
+  - dashboards
+  - alerts
+  - metrics
+  - llm-gateway
+  - experiments
+  - attributes
+  - annotations
+  - backfills
+- name: genai-experimental
+  access: read-write
+  note: Create/update/delete across the same domains; requires separate administrator enablement.
+deployment:
+  mode: local-stdio
+  verified: searched
+  checked: '2026-08-12'
+  source: catalog MCP census
