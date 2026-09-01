@@ -41,7 +41,7 @@ accessModel:
 specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-19'
-image: https://www.fiddler.ai/favicon.ico
+image: ''
 tags:
 - Company
 - AI Observability
