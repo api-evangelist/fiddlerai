@@ -1,0 +1,42 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://www.fiddler.ai/pricing
+sources:
+- https://www.fiddler.ai/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: per-call
+delivery:
+  delivery: managed+licensed
+  method: page
+  read: '2026-10-07'
+  evidence: 'Flexible deployment: SaaS, VPC, or on-premise'
+  managed_tier: Developer
+published: true
+note: Three tiers; only Developer shows a numeric price ($0.002 per trace). Enterprise offers VPC/on-premise
+  deployment under a sales contract.
+plan_count: 3
+currency: USD
+plans:
+- name: Free
+  price_text: Free
+  period: none
+  included_quota: Real-time guardrails to detect harmful exposure; protects against hallucinations, Toxicity,
+    PII/PHI, Prompt Injection, and Jailbreak attempts; Latency of <80ms; Powered by Fiddler Centor Models
+- name: Developer
+  price_text: $0.002 per trace
+  price: 0.002
+  currency: USD
+  period: per-use
+  unit: trace
+  included_quota: Everything in Free, plus unified AI observability, custom evaluators, visualization-driven
+    insights, RBAC and SSO, SaaS deployment
+- name: Enterprise
+  price_text: Contact sales
+  period: none
+  included_quota: 'Everything in Developer, plus enterprise-grade guardrails, scalability, flexible deployment:
+    SaaS, VPC, or on-premise, white glove support, named CSM'
